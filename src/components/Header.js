@@ -32,8 +32,11 @@ export default Header;
 
 const Wrapper = styled.div`
     display: flex;
+    width: 100%;
     height: 80px;
     background-color: white;
+    position: fixed;
+    opacity: 0.7;
 `;
 
 const UserProfile = styled.button`
@@ -48,6 +51,7 @@ const UserImage = styled.img`
     height: 70px;
     border-radius: 20px;
 `;
+
 // 버튼 크기에 맞게 조절할 수 있으면 좋을듯
 
 const UserInformatino = styled.div`

@@ -21,17 +21,16 @@ const ChattingScreen = () => {
     ];
 
     return (
-        <>
+        <Screen>
             <Header></Header>
-            <Screen></Screen>
             <MessageSender></MessageSender>
-        </>
+        </Screen>
     );
 };
 
 export default ChattingScreen;
 
 const Screen = styled.div`
-    height: 562px;
+    height: 100%;
     background-color: #abc1d1;
 `;
