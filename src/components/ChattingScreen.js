@@ -24,8 +24,14 @@ export default function ChattingScreen() {
     <Wrapper>
       <Header></Header>
       <Chat>
-        <MessageSender></MessageSender>
+        <MessageSender {...MSGLIST}></MessageSender>
       </Chat>
+      <div>
+        <InputBox>
+          <input />
+          <button>전송</button>
+        </InputBox>
+      </div>
     </Wrapper>
   );
 }
@@ -34,4 +40,29 @@ const Wrapper = styled.div``;
 
 const Chat = styled.div`
   background-color: #abc1d1;
+`;
+
+const InputBox = styled.div`
+  height: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.05);
+  input {
+    height: 50px;
+    width: 90%;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+  }
+  *:focus {
+    outline: none;
+  }
+  button {
+    width: 7%;
+    height: 50px;
+    background-color: yellow;
+    border-radius: 20px;
+    border: none;
+  }
 `;
