@@ -20,7 +20,6 @@ export default function MessageSender(props) {
 			<input type="text" onChange={onChangeMessage} />
 			<input type="submit" value="전송" />
 		</form>
-	메시지 전송부
 	</Wrapper>
 	);
 }
