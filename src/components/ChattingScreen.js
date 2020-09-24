@@ -16,20 +16,23 @@ export default function ChattingScreen() {
     { user: false, content: "그만 말해줘도 돼" },
     { user: true, content: "ㅠㅠ" },
   ];
-  const [inputText, setinputText] = useState("");
+  const [InputText, setInputText] = useState("");
   const [MessageList, setMessageList] = useState(MSGLIST);
   const [User, setUser] = useState(true);
 
-  const handleInput = (event) => setinputText(event.target.value);
+  const handleInput = (event) => setInputText(event.target.value);
 
   const handleSubmit = (event) => {
+    //prevent refresh right after submit
     event.preventDefault();
+    //concat to previous MessageList
     const nextMessageList = MessageList.concat({
       user: User,
-      content: inputText,
+      content: InputText,
     });
+    //update MessageList
     setMessageList(nextMessageList);
-    setinputText("");
+    setInputText("");
   };
 
   return (
@@ -40,7 +43,7 @@ export default function ChattingScreen() {
       </Chat>
 
       <InputBox>
-        <input value={inputText} onChange={handleInput} />
+        <input value={InputText} onChange={handleInput} />
         <button onClick={handleSubmit}>전송</button>
       </InputBox>
     </Wrapper>

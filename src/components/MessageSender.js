@@ -1,11 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { images } from "./images/image";
 export default function MessageSender(props) {
   //change object input into array
   const messageArray = Object.values(props);
-
-  const [messages, setmessages] = useState(messageArray);
 
   //give <li> structure to each message
   let messageList;
