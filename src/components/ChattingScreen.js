@@ -1,13 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 import Header from "./Header";
 import MessageSender from "./MessageSender";
 
 export default function ChattingScreen() {
-  const EUNKO = "https://img.techpowerup.org/200908/eun.png";
-  const COOL = "https://img.techpowerup.org/200908/NjRiY2JjOGU5YzQz.png";
-
   const MSGLIST = [
     { user: true, content: "안녕하세요 12기 프론트엔드 개발자분들" },
     { user: true, content: "저희의 대화를 마음껏 조작해보세요 💌" },
@@ -19,19 +16,33 @@ export default function ChattingScreen() {
     { user: false, content: "그만 말해줘도 돼" },
     { user: true, content: "ㅠㅠ" },
   ];
+  const [inputText, setinputText] = useState("");
+  const [MessageList, setMessageList] = useState(MSGLIST);
+  const [User, setUser] = useState(true);
+
+  const handleInput = (event) => setinputText(event.target.value);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const nextMessageList = MessageList.concat({
+      user: User,
+      content: inputText,
+    });
+    setMessageList(nextMessageList);
+    setinputText("");
+  };
 
   return (
     <Wrapper>
       <Header></Header>
       <Chat>
-        <MessageSender {...MSGLIST}></MessageSender>
+        <MessageSender {...MessageList}></MessageSender>
       </Chat>
-      <div>
-        <InputBox>
-          <input />
-          <button>전송</button>
-        </InputBox>
-      </div>
+
+      <InputBox>
+        <input value={inputText} onChange={handleInput} />
+        <button onClick={handleSubmit}>전송</button>
+      </InputBox>
     </Wrapper>
   );
 }
@@ -42,7 +53,7 @@ const Chat = styled.div`
   background-color: #abc1d1;
 `;
 
-const InputBox = styled.div`
+const InputBox = styled.form`
   height: 60px;
   width: 100%;
   display: flex;

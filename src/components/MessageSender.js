@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { images } from "./images/image";
 export default function MessageSender(props) {
@@ -8,7 +8,10 @@ export default function MessageSender(props) {
   const [messages, setmessages] = useState(messageArray);
 
   //give <li> structure to each message
-  const messageList = messageArray.map((message) => (
+  let messageList;
+
+  useEffect(() => {}, []);
+  messageList = messageArray.map((message) => (
     <MessageRow>
       {/* if user is true */}
       {message.user && (
@@ -27,7 +30,6 @@ export default function MessageSender(props) {
       )}
     </MessageRow>
   ));
-
   return <>{messageList}</>;
 }
 const Wrapper = styled.div``;
