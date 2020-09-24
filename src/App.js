@@ -16,4 +16,5 @@ const Wrapper = styled.div`
 	& * {
 		font-family: sans-serif;
 	}
+	background: grey;
 `;

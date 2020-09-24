@@ -8,7 +8,7 @@ export default function ChattingScreen() {
 	const EUNKO = 'https://img.techpowerup.org/200908/eun.png';
 	const COOL = 'https://img.techpowerup.org/200908/NjRiY2JjOGU5YzQz.png';
 
-	const MSGLIST = [
+	let MSGLIST = [
 		{ user: true, content: '안녕하세요 12기 프론트엔드 개발자분들' },
 		{ user: true, content: '저희의 대화를 마음껏 조작해보세요 💌' },
 		{ user: true, content: '상단에 프로필을 눌러서 발신자 변경하면 됩니당~' },
@@ -20,12 +20,31 @@ export default function ChattingScreen() {
 		{ user: true, content: 'ㅠㅠ' },
 	];
 
+	function getSubmit(text) {
+		console.log('hi');
+		MSGLIST.push(text);
+		console.log(MSGLIST);
+	}
+
 	return (
 		<Wrapper>
 			<Header></Header>
-			<MessageSender></MessageSender>
+			{/* <BoxShowingChatting></BoxShowingChatting> */}
+			<MessageSender onSubmit={getSubmit}></MessageSender>
 		</Wrapper>
 	);
 }
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+	height: 100vh;
+
+	display: flex;
+	flex-direction: column;
+
+
+	${'' /* background: blue; */}
+`;
+
+// const BoxShowingChatting = styled.div`
+// 	flex-grow: 8;
+// `

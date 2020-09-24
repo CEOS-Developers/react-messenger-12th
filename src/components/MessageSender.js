@@ -1,7 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
-export default function MessageSender() {
-	return <Wrapper>메시지 전송부</Wrapper>;
+export default function MessageSender(props) {
+	
+	const [message, setMessage] = useState('');
+	
+	const formSubmit = e => {
+		e.preventDefault();
+		props.onSubmit(message);
+	}
+
+	const onChangeMessage = e => {
+		setMessage(e.target.value)
+	}
+
+	return (
+	<Wrapper>
+		<form onSubmit={formSubmit}>
+			<input type="text" onChange={onChangeMessage} />
+			<input type="submit" value="전송" />
+		</form>
+	메시지 전송부
+	</Wrapper>
+	);
 }
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+	height: 60px;
+	background: black;
+	color: white;
+	opacity: 0.5;
+
+	margin-top: auto;
+	${'' /* flex-grow: 1; */}
+`;
