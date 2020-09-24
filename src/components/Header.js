@@ -1,17 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
-const Header = () => {
-    const dummyData = [];
-    const EUNKO = 'https://img.techpowerup.org/200908/eun.png';
-    const COOL = 'https://img.techpowerup.org/200908/NjRiY2JjOGU5YzQz.png';
+const Header = ({ UserList, toggleUser }) => {
     const [userName, setUserName] = useState('고은');
     const [userStatus, setUserStatus] = useState('현재 활동중');
-    const [userImage, setUserImage] = useState(EUNKO);
+    const [userImage, setUserImage] = useState(UserList[0]);
 
     const onClick = () => {
-        console.log('clicked');
-        setUserImage(COOL);
+        if (toggleUser()) {
+            setUserImage(UserList[0]);
+            setUserName('고은');
+        } else {
+            setUserImage(UserList[1]);
+            setUserName('시원');
+        }
     };
 
     return (
@@ -32,11 +34,12 @@ export default Header;
 
 const Wrapper = styled.div`
     display: flex;
+
     width: 100%;
     height: 80px;
-    background-color: white;
+
+    background-color: rgba(255, 255, 255, 0.8);
     position: fixed;
-    opacity: 0.7;
 `;
 
 const UserProfile = styled.button`
@@ -67,3 +70,5 @@ const UserName = styled.div`
 `;
 
 const UserStatus = styled.div``;
+
+const ps = styled.div``;

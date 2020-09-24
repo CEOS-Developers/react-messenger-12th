@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 import Header from './Header';
@@ -7,7 +7,7 @@ import MessageSender from './MessageSender';
 const ChattingScreen = () => {
     const EUNKO = 'https://img.techpowerup.org/200908/eun.png';
     const COOL = 'https://img.techpowerup.org/200908/NjRiY2JjOGU5YzQz.png';
-
+    const UserList = [EUNKO, COOL];
     const MSGLIST = [
         { user: true, content: '안녕하세요 12기 프론트엔드 개발자분들' },
         { user: true, content: '저희의 대화를 마음껏 조작해보세요 💌' },
@@ -20,10 +20,21 @@ const ChattingScreen = () => {
         { user: true, content: 'ㅠㅠ' },
     ];
 
+    const [status, setStatus] = useState(false);
+    const toggleUser = () => {
+        if (status) {
+            setStatus(false);
+        } else {
+            setStatus(true);
+        }
+
+        return status;
+    };
+
     return (
         <Screen>
-            <Header></Header>
-            <MessageSender></MessageSender>
+            <Header UserList={UserList} toggleUser={toggleUser}></Header>
+            <MessageSender message={MSGLIST}></MessageSender>
         </Screen>
     );
 };

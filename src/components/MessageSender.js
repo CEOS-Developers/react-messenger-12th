@@ -1,13 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const MessageSender = () => {
+const MessageSender = ({ message }) => {
+    const onSubmit = (e) => {
+        e.preventDefault();
+    };
     return (
         <Wrapper>
-            <MessageForm>
+            <MessageForm onSubmit={onSubmit}>
                 <MessageContent></MessageContent>
+                <MessageSendButton type="submit" value="전송"></MessageSendButton>
             </MessageForm>
-            <MessageSendButton type="submit" value="전송"></MessageSendButton>
         </Wrapper>
     );
 };
@@ -16,8 +19,6 @@ export default MessageSender;
 
 const Wrapper = styled.div`
     display: flex;
-    width: 100%;
-    padding: 10px 3%;
 
     background-color: white;
     position: fixed;
@@ -26,19 +27,22 @@ const Wrapper = styled.div`
 `;
 
 const MessageForm = styled.form`
-    width: 80%;
+    width: 100vw;
+    margin: 10px 3vw;
 `;
 
 const MessageContent = styled.input`
-    width: 95%;
-    height: 45px;
+    width: 78vw;
+    height: 25px;
+    padding: 10px;
+    margin-right: 10px;
 
     border: 1px solid gray;
     border-radius: 17.5px;
 `;
 
 const MessageSendButton = styled.input`
-    width: 70px;
+    width: 12vw;
     height: 45px;
 
     border-radius: 15px;
