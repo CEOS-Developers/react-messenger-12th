@@ -7,9 +7,6 @@ export default function Header(props) {
 		display: 'flex',
 		height: '100%',
 		width: '70px',
-		// paddingTop: '3%',
-		// paddingLeft: '0px',
-		// paddingBottom: '5px',
 		borderRadius: '30%',
 	}
 	
@@ -54,14 +51,12 @@ const Wrapper = styled.div`
 
 	background-color: white;
 	color: black;
-	${'' /* opacity: 0.7; */}
 	background: rgba(255, 255, 255, 0.8);
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
 
 	display: flex;
 	position: absolute;
 	position: fixed;
-	${'' /* flex-grow: 1; */}
 `;
 
 const PersonNameWrapper = styled.span`

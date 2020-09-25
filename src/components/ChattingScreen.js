@@ -5,8 +5,6 @@ import Header from './Header';
 import MessageSender from './MessageSender';
 
 export default function ChattingScreen() {
-	const EUNKO = 'https://img.techpowerup.org/200908/eun.png';
-	const COOL = 'https://img.techpowerup.org/200908/NjRiY2JjOGU5YzQz.png';
 	const liLeftside = {
 		display: 'flex',
 		alignItems: 'center',
@@ -19,7 +17,6 @@ export default function ChattingScreen() {
 		padding: '15px 5px'
 	};
 	const EunkoImageStyle = {
-		// display: 'flex',
 		height: '50px',
 		paddingTop: '0%',
 		borderRadius: '40%',
@@ -35,23 +32,17 @@ export default function ChattingScreen() {
 
 	const [messageArr, setMessageArr] = useState( [
 		{ user: true, content: '안녕하세요 12기 프론트엔드 개발자분들' },
-		{ user: true, content: '저희의 대화를 마음껏 조작해보세요 💌' },
-		{ user: true, content: '상단에 프로필을 눌러서 발신자 변경하면 됩니당~' },
+		{ user: true, content: '여러분께 소개드리고 싶은 사람이 있어요~'},
+		{ user: true, content: '바로 12기의 장창훈 이라고 하시는 분입니다 !!!' },
 		{ user: false, content: '안녕 은아' },
 		{ user: false, content: '뭐해 ?' },
-		{ user: true, content: '시원아 넌 최고의 팀장이야' },
+		{ user: true, content: '지금 장창훈님을 소개하고있어' },
 		{ user: false, content: '나도 아니까  ' },
 		{ user: false, content: '그만 말해줘도 돼' },
-		{ user: true, content: 'ㅠㅠ' },
+		{ user: true, content: 'ㅠㅠ...' },
 	] );
 
 	const [personNowSending, setPersonNowSending] = useState('true');
-
-	const [messageHTML, setMessageHTML] = useState('');
-
-	// useEffect(() => {
-	// 	setMessageHTML('')
-	// });
 
 	function getMessageSubmit(messageText) {
 		if (messageText=='') {
@@ -63,13 +54,6 @@ export default function ChattingScreen() {
 			user: personNowSending,
 			content: messageText
 		}])
-		// MSGLIST.push(messageText);
-		// html = '<ul style="display: flex; flex-direction: column;">';
-		// for (let message of messageArr) {
-		// 	html += `<li>${message.content}</li>`
-		// }
-		// html += '</ul>';
-		// setMessageHTML(html);
 	}
 
 	function getHeaderSubmit(person) {
@@ -78,7 +62,7 @@ export default function ChattingScreen() {
 
 	useEffect(() => {
 		window.scrollBy(1000, 1000);
-	});
+	}, [messageArr]);		// 프로필 변경시 scrollBy 작동 방지.
 
 	return (
 		<Wrapper>
@@ -134,6 +118,3 @@ const MessageTextWrapper = styled.div`
 	padding: 10px 8px;
 	margin: 0 8px;
 `;
-// const BoxShowingChatting = styled.div`
-// 	flex-grow: 8;
-// `
