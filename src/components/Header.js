@@ -6,7 +6,9 @@ export default function Header(props) {
 	const inputTagStyle = {
 		display: 'flex',
 		height: '80%',
-		paddingTop: '3%'	
+		paddingTop: '3%',
+		paddingLeft: '15px',
+		borderRadius: '30%'
 	}
 	
 	const formSubmit = e => {
@@ -32,11 +34,12 @@ export default function Header(props) {
 const Wrapper = styled.div`
 	height: 100px;
 	width: 100%;
-	background-color: black;
-	color: white;
+	background-color: white;
+	color: black;
 	opacity: 0.5;
 
 	display: flex;
 	position: absolute;
+	position: fixed;
 	${'' /* flex-grow: 1; */}
 `;

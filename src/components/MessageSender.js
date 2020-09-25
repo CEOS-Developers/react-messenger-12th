@@ -25,8 +25,8 @@ export default function MessageSender(props) {
 }
 const Wrapper = styled.div`
 	height: 60px;
-	background: black;
-	color: white;
+	background: white;
+	color: black;
 	opacity: 0.5;
 
 	margin-top: auto;

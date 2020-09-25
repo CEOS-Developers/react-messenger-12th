@@ -9,13 +9,27 @@ export default function ChattingScreen() {
 	const EUNKO = 'https://img.techpowerup.org/200908/eun.png';
 	const COOL = 'https://img.techpowerup.org/200908/NjRiY2JjOGU5YzQz.png';
 	const liLeftside = {
-
+		display: 'flex',
+		alignItems: 'center'
 	};
 	const liRightside = {
 		display: 'flex',
-		justifyContent: 'flex-end'
+		justifyContent: 'flex-end',
+		alignItems: 'center'
 	};
-	let html = '';
+	const EunkoImageStyle = {
+		// display: 'flex',
+		height: '30px',
+		paddingTop: '0%',
+		paddingRight: '5px',
+		borderRadius: '40%'
+	};
+	const CoolImageStyle = {
+		height: '30px',
+		paddingTop: '0%',
+		paddingLeft: '5px',
+		borderRadius: '40%'
+	};
 
 	const [messageArr, setMessageArr] = useState( [
 		{ user: true, content: '안녕하세요 12기 프론트엔드 개발자분들' },
@@ -64,13 +78,15 @@ export default function ChattingScreen() {
 				{messageArr.map((msg, index) => {
 					if (msg.user) {
 						return (
-						<li key={index}>
+						<li style={liLeftside} key={index}>
+							<img src="https://img.techpowerup.org/200908/eun.png" style={EunkoImageStyle} />
 							{msg.content}
 						</li>
 					)} else {
 						return (
 						<li style={liRightside} key={index}>
 							{msg.content}
+							<img src="https://img.techpowerup.org/200908/NjRiY2JjOGU5YzQz.png" style={CoolImageStyle} />
 						</li>
 					)}
 				})}
@@ -86,9 +102,6 @@ const Wrapper = styled.div`
 
 	display: flex;
 	flex-direction: column;
-
-
-	${'' /* background: blue; */}
 `;
 
 const MessageWrapper = styled.ul`
