@@ -1,10 +1,8 @@
-import React , {useState} from 'react';
+import React from 'react';
 import styled from 'styled-components';
-//import MSGLIST from './Chats.jsx'
-import List from './Chats.jsx'
+
 import Header from './Header';
 import MessageSender from './MessageSender';
-import useFetch from'./useFetch.js';
 
 const MSGLIST = [
 	{ user: true, content: '안녕하세요 12기 프론트엔드 개발자분들' },
@@ -17,8 +15,7 @@ const MSGLIST = [
 	{ user: false, content: '그만 말해줘도 돼' },
 	{ user: true, content: 'ㅠㅠ' },
 ];
-/*export default MSGLIST;
-*/
+
 
 export default function ChattingScreen() {
 
@@ -37,8 +34,13 @@ export default function ChattingScreen() {
 		console.log("after concat")
 	}
 	*/
+	
+	console.log(MSGLIST);
 
-				/*
+	return (
+		<Wrapper>
+			<Header user1={EUNKO} user2={COOL} ></Header>
+			<MessageList>
 				{MSGLIST.map((message, index) => {
 					if (message.user) {
 						return (
@@ -56,21 +58,7 @@ export default function ChattingScreen() {
 						</ChatLine>
 
 					)
-				})
-				*/
-	const [message, setMessage] = useState(MSGLIST);
-	//console.log("HU",useFetch(setMessage,"http://localhost:8080/chat"));
-
-	const loading=useFetch(setMessage,"http://localhost:8080/chat")
-	console.log("check fetch",message);
-	return (
-		<Wrapper>
-			<Header user1={EUNKO} user2={COOL} ></Header>
-			<MessageList >
-				<List chats={message} loading={loading}/>
-				
-	
-				
+				})}
 			</MessageList>
 			<MessageSender></MessageSender>
 		</Wrapper>
@@ -78,7 +66,7 @@ export default function ChattingScreen() {
 }
 
 const Wrapper = styled.div`
-background:skyblue;
+
 `;
 
 const MessageList = styled.div`
@@ -86,7 +74,7 @@ background:skyblue;
 `;
 
 const ChatLine = styled.div`
-background:skyblue;
+
 display:flex;
 justify-content:center;
 clear:both;
