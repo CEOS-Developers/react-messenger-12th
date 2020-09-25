@@ -5,7 +5,7 @@ export default function MessageSender(props) {
 	
 	const [message, setMessage] = useState('');
 	
-	const inputTagStyle = {
+	const inputTagStyle = {	// 메시지 입력칸
 		width: '1150px',
 		height: '60%',
 		paddingLeft: '12px',
@@ -18,7 +18,7 @@ export default function MessageSender(props) {
 		margin: '10px'
 	};
 
-	const inputButtonTagStyle = {
+	const inputButtonTagStyle = {	// 전송 버튼
 		display: 'inline-flex',
 		height: '50px',
 		width: '65px',
@@ -32,6 +32,7 @@ export default function MessageSender(props) {
 		fontSize: '15px'
 	}
 
+	// 입력받은 메시지를 ChattingScreen로 전달.
 	const formSubmit = e => {
 		e.preventDefault();
 		props.onSubmit(message);
@@ -70,9 +71,3 @@ const Wrapper = styled.footer`
 const SubmitToChattingScreenWrapper = styled.form`
 	width: 100%;
 `;
-
-// const inputMessage = styled.input`
-// 	height: 100%;
-// 	width: 100%;
-// `;
-// 인풋을 styled component로 바꾸지는 못한다.. ?
