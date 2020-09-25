@@ -1,31 +1,60 @@
 import React from "react";
 import styled from "styled-components";
 import { images } from "./images/image";
-export default function Header() {
+
+export default function Header(props) {
+  //change parent's user state using props
+  const handleClick = () => {
+    props.onClick();
+  };
+
   return (
-    <Wrapper>
-      <ProfileImage></ProfileImage>
-      <div>
-        <h2 style={{ marginBottom: "0" }}>고은</h2>
-        현재 활동중
-      </div>
-    </Wrapper>
+    <Profile onClick={handleClick}>
+      {/* if user value is false */}
+      {!props.user && (
+        <>
+          <img src={images.COOL} />
+          <div>
+            <h2 style={{ marginBottom: "0" }}>정쿨</h2>
+            <br />
+            현재 활동중
+          </div>
+        </>
+      )}
+      {/* if user value is true */}
+      {props.user && (
+        <>
+          <img src={images.EUNKO} />
+          <div>
+            <h2 style={{ marginBottom: "0" }}>고은</h2>
+            <br />
+            현재 활동중
+          </div>
+        </>
+      )}
+    </Profile>
   );
 }
-const Wrapper = styled.div`
-  background-color: rgba(0, 0, 0, 0.1);
-  height: 20vh;
-  color: black;
+
+const Profile = styled.div`
+  background-color: white;
   display: flex;
   align-items: center;
-`;
+  width: 100%;
 
-const ProfileImage = styled.div`
-  background-image: url(${images.COOL});
-  width: 100px;
-  height: 100px;
-  background-size: cover;
-  border-radius: 25px;
-  display: inline-block;
-  margin: 15px;
+  div {
+    margin-left: 10px;
+  }
+
+  img {
+    border-radius: 20px;
+    width: 100px;
+    height: 100px;
+  }
+
+  padding-left: 20px;
+  height: 120px;
+  z-index: 1;
+  position: fixed;
+  opacity: 0.8;
 `;

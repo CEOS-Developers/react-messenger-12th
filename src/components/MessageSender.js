@@ -30,7 +30,6 @@ export default function MessageSender(props) {
   ));
   return <>{messageList}</>;
 }
-const Wrapper = styled.div``;
 
 const MessageRow = styled.li`
   list-style: none;

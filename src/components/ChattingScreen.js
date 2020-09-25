@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
 import Header from "./Header";
@@ -20,11 +20,20 @@ export default function ChattingScreen() {
   const [MessageList, setMessageList] = useState(MSGLIST);
   const [User, setUser] = useState(true);
 
-  const handleInput = (event) => setInputText(event.target.value);
+  const handleInput = (event) => {
+    setInputText(event.target.value);
+  };
 
   const handleSubmit = (event) => {
     //prevent refresh right after submit
     event.preventDefault();
+
+    //handle exception when user typed nothing
+    if (InputText === "") {
+      alert("내용을 입력하세요");
+      return;
+    }
+
     //concat to previous MessageList
     const nextMessageList = MessageList.concat({
       user: User,
@@ -36,8 +45,10 @@ export default function ChattingScreen() {
   };
 
   return (
-    <Wrapper>
-      <Header></Header>
+    <>
+      {/* child component updates state in parent component   */}
+      <Header user={User} onClick={() => setUser(!User)}></Header>
+
       <Chat>
         <MessageSender {...MessageList}></MessageSender>
       </Chat>
@@ -46,14 +57,13 @@ export default function ChattingScreen() {
         <input value={InputText} onChange={handleInput} />
         <button onClick={handleSubmit}>전송</button>
       </InputBox>
-    </Wrapper>
+    </>
   );
 }
 
-const Wrapper = styled.div``;
-
 const Chat = styled.div`
   background-color: #abc1d1;
+  padding-top: 120px;
 `;
 
 const InputBox = styled.form`
@@ -63,15 +73,18 @@ const InputBox = styled.form`
   justify-content: space-around;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.05);
+
   input {
     height: 50px;
     width: 90%;
     border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 20px;
   }
+
   *:focus {
     outline: none;
   }
+
   button {
     width: 7%;
     height: 50px;
