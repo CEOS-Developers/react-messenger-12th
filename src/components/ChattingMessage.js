@@ -11,7 +11,6 @@ const ChattingMessage = ({ messageContent, userList }) => {
                         <UserImage src={userList[messageContent[0]]} />
                     </UserProfile>
                     <UserContent>{messageContent[1]}</UserContent>
-                    <UserProfile></UserProfile>
                 </Wrapper>
             ) : (
                 <Wrapper style={{ flexDirection: 'row-reverse' }}>
@@ -19,7 +18,6 @@ const ChattingMessage = ({ messageContent, userList }) => {
                         <UserImage src={userList[messageContent[0]]} />
                     </UserProfile>
                     <UserContent>{messageContent[1]}</UserContent>
-                    <UserProfile></UserProfile>
                 </Wrapper>
             )}
         </>
@@ -46,7 +44,8 @@ const UserImage = styled.img`
 `;
 
 const UserContent = styled.div`
-    padding: 7.5px 5px;
+    display: block;
+    padding: 7px 7px;
     margin: 7.5px;
     height: 32.5px;
 

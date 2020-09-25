@@ -10,6 +10,10 @@ const MessageSender = ({ status, onChangeMessageList }) => {
 
     const onSubmit = (e) => {
         e.preventDefault();
+        if (messageContent === '') {
+            alert('공백은 입력하실 수 없습니다.');
+            return;
+        }
         const newMessage = { user: status, content: messageContent };
         setMessageContent('');
         onChangeMessageList(newMessage);
@@ -28,8 +32,6 @@ const MessageSender = ({ status, onChangeMessageList }) => {
 export default MessageSender;
 
 const Wrapper = styled.div`
-    display: flex;
-
     background-color: white;
     position: fixed;
     opacity: 0.9;
@@ -37,6 +39,7 @@ const Wrapper = styled.div`
 `;
 
 const MessageForm = styled.form`
+    display: flex;
     width: 100vw;
     margin: 10px 3vw;
 `;

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 import Header from './Header';
@@ -24,6 +24,9 @@ const ChattingScreen = () => {
     const [status, setStatus] = useState(true);
     const [messageList, setMessageList] = useState(MSGLIST);
 
+    useEffect(() => {
+        window.scrollBy(0, 80);
+    });
     // switch User function
     const toggleUser = () => {
         if (status) {
@@ -51,12 +54,11 @@ const ChattingScreen = () => {
                 }
             })}
             <MessageSender message={MSGLIST} status={status} onChangeMessageList={onChangeMessageList}></MessageSender>
+            <div style={{ height: '75px' }}></div>
         </Screen>
     );
 };
 
 export default ChattingScreen;
 
-const Screen = styled.div`
-    height: 100%;
-`;
+const Screen = styled.div``;
