@@ -84,28 +84,43 @@ export default function MessageSender() {
 			<Button onClick={updateChat}
 			>전송</Button>
 		</Form>
-		
 	</Wrapper>;
 }
 const Wrapper = styled.div`
-display:flex
-align-content:stretch
+position:absolute;
+bottom:0px;
+left:0px;
+right:0px;
+
 
 `;
 const Form=styled.form`
-display:flex
-align-content:stretch
-background:white;
+display:flex;
+height:50px;
+padding:10px;
+align-content:stretch;
+background-color:white;
+box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
+background: white;
 `
 
 const Input = styled.input`
+flex-grow:5;
 type="text";
-border:solid;
+border: 1px solid rgba(0, 0, 0, 0.1);
+border-radius:10%;
+margin-right :15px;
+margin-left :15px;
 `;
 const Button = styled.button`
-radius:40%;
+flex-grow:1;
+height:30
+
+margin-right: 10px;
 border:none;
+border-radius:20px;
+background-color:	#FFFF00;
 text-align:center
-margin-left: 30px;
-background:yellow
+
+
 `;

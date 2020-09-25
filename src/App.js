@@ -14,6 +14,7 @@ export default function App() {
 }
 
 const Wrapper = styled.div`
+background-color: #87ceeb;
 	height: 100vh;
 	& * {
 		font-family: sans-serif;
