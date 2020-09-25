@@ -22,9 +22,6 @@ export default function ChattingScreen() {
 	const EUNKO = 'https://img.techpowerup.org/200908/eun.png';
 	const COOL = 'https://img.techpowerup.org/200908/NjRiY2JjOGU5YzQz.png';
 
-
-	
-
 	console.log("in chat screeen");
 	/*
 	if(value!=null){
@@ -40,6 +37,7 @@ export default function ChattingScreen() {
 	return (
 		<Wrapper>
 			<Header user1={EUNKO} user2={COOL} ></Header>
+			
 			<MessageList>
 				{MSGLIST.map((message, index) => {
 					if (message.user) {
@@ -54,7 +52,6 @@ export default function ChattingScreen() {
 						<ChatLine>
 							<ChatBox>{message.content}</ChatBox>
 							<Profile src={COOL} width="50" height="50" />
-
 						</ChatLine>
 
 					)
@@ -70,8 +67,10 @@ const Wrapper = styled.div`
 `;
 
 const MessageList = styled.div`
-background:skyblue;
+
+background-color: #2ec1ac;
 `;
+
 
 const ChatLine = styled.div`
 
@@ -83,16 +82,18 @@ float:${props => props.left ? 'left' : 'right'}
 const Profile = styled.img`
 border-radius : 50%;
 margin-top:15px;
+box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
 `;
 const ChatBox = styled.div`
 display:table;
-background: grey;
+background: white;
 padding 1rem; 
 margin-left:10px;
 margin-right:10px;
 margin-top:15px;
-border-radius : 50px;
+border-radius : 20px;
 font-size:15px;
+box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
 
 `;
 
