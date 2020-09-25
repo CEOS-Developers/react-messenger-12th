@@ -11,7 +11,7 @@ export default function ChattingScreen() {
 	const liLeftside = {
 		display: 'flex',
 		alignItems: 'center',
-		padding: '15px 5px'
+		padding: '15px 0'
 	};
 	const liRightside = {
 		display: 'flex',
@@ -95,8 +95,8 @@ export default function ChattingScreen() {
 					)}
 				})}
 			</MessageWrapper>
-			{/* <MessageViewer messageHtml={messageHTML}></MessageViewer> */}
-			<MessageSender onSubmit={getMessageSubmit}></MessageSender>
+			{/* <pre><br/></pre> */}
+\			<MessageSender onSubmit={getMessageSubmit}></MessageSender>
 		</Wrapper>
 	);
 }
@@ -113,8 +113,9 @@ const MessageWrapper = styled.ul`
 	display: flex;
 	flex-direction: column;
 	flex-grow: 1;
+	padding: 0 10px;
 	
-	background-color: #A9D0F5;
+	background-color: #ABC1D1;
 `;
 
 const MessageTextWrapper = styled.div`
