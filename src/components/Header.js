@@ -6,10 +6,23 @@ export default function Header(props) {
 	const inputTagStyle = {
 		display: 'flex',
 		height: '100%',
+		width: '70px',
 		// paddingTop: '3%',
 		// paddingLeft: '0px',
 		// paddingBottom: '5px',
 		borderRadius: '30%',
+	}
+	
+	const divTagPaddingStyle = {
+		displya: 'flex',
+		paddingLeft: '15px',
+		alingContent: 'center',
+
+		paddingTop: '5px'	// 글자 가운데 정렬이 안되어서 임시방편
+	}
+
+	const spanTagStyle = {
+		display: 'flex',
 	}
 	
 	const formSubmit = e => {
@@ -27,9 +40,10 @@ export default function Header(props) {
 				<input style={inputTagStyle} type="image" onClick={onChangePerson} 
 				src={person ? "https://img.techpowerup.org/200908/eun.png" : "https://img.techpowerup.org/200908/NjRiY2JjOGU5YzQz.png"} />
 			</form>
-			<PersonNameWrapper>{ person ? '고은\n' : '정쿨\n' }</PersonNameWrapper>
-			<br/>
-			현재 활동중
+			<div style={divTagPaddingStyle}>
+				<PersonNameWrapper>{ person ? '고은\n' : '정쿨\n' }</PersonNameWrapper>
+				<span style={spanTagStyle}>현재 활동중</span>
+			</div>
 		</Wrapper>
 	);
 }
@@ -50,6 +64,7 @@ const Wrapper = styled.div`
 `;
 
 const PersonNameWrapper = styled.span`
-	height: 0;
-	font-size: 30px;
+	display: flex;
+	height: auto;
+	font-size: 25px;
 `;

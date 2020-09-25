@@ -21,16 +21,17 @@ export default function ChattingScreen() {
 	};
 	const EunkoImageStyle = {
 		// display: 'flex',
-		height: '40px',
+		height: '50px',
 		paddingTop: '0%',
-		paddingRight: '8px',
-		borderRadius: '40%'
+		borderRadius: '40%',
+		boxShadow: '3px 1px 7px  rgba(0, 0, 0, 0.25)'
 	};
 	const CoolImageStyle = {
-		height: '40px',
+		height: '50px',
 		paddingTop: '0%',
-		paddingLeft: '8px',
-		borderRadius: '40%'
+		borderRadius: '40%',
+		boxShadow: '3px 1px 7px  rgba(0, 0, 0, 0.25)'
+
 	};
 
 	const [messageArr, setMessageArr] = useState( [
@@ -120,6 +121,7 @@ const MessageTextWrapper = styled.div`
 	width: auto;
 	height: auto;
 	padding: 10px 8px;
+	margin: 0 8px;
 `;
 // const BoxShowingChatting = styled.div`
 // 	flex-grow: 8;
