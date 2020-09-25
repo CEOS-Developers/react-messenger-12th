@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 export default function MessageSender(props) {
@@ -30,6 +30,8 @@ export default function MessageSender(props) {
 	const formSubmit = e => {
 		e.preventDefault();
 		props.onSubmit(message);
+		document.querySelector('#messageBox').value = '';
+		setMessage('');		// 메시지 한번 전송 후, 메시지state를 초기화 해야함.
 	}
 
 	const onChangeMessage = e => {
@@ -40,7 +42,7 @@ export default function MessageSender(props) {
 	<Wrapper>
 		{/* <form onSubmit={formSubmit}> */}
 		<SubmitToChattingScreenWrapper onSubmit={formSubmit}>
-			<input type="text" style={inputTagStyle} onChange={onChangeMessage} />
+			<input type="text" id="messageBox" style={inputTagStyle} onChange={onChangeMessage} />
 			{/* <inputMessage type="text" onChange={onChangeMessage}></inputMessage> */}
 			<input type="submit" style={inputButtonTagStyle} value="전송" />
 		</SubmitToChattingScreenWrapper>
@@ -49,7 +51,7 @@ export default function MessageSender(props) {
 	);
 }
 const Wrapper = styled.footer`
-	height: 60px;
+	height: 70px;
 	left: 0px;
 	bottom: 0px;
 	width: 100vw;
@@ -59,6 +61,7 @@ const Wrapper = styled.footer`
 	background-color: white;
 	background: rgba(255, 255, 255, 0.8);
 	color: black;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
 
 	display: flex;
 	${'' /* flex-grow: 1; */}

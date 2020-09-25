@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 import Header from './Header';
 import MessageSender from './MessageSender';
-import MessageViewer from './MessageViewer';
 
 export default function ChattingScreen() {
 	const EUNKO = 'https://img.techpowerup.org/200908/eun.png';
@@ -55,13 +54,16 @@ export default function ChattingScreen() {
 	// });
 
 	function getMessageSubmit(messageText) {
+		if (messageText=='') {
+			alert('메시지부터 입력하세요 ^^');
+			return;
+		}
+
 		setMessageArr([...messageArr, {
 			user: personNowSending,
 			content: messageText
 		}])
 		// MSGLIST.push(messageText);
-		console.log(messageArr);
-
 		// html = '<ul style="display: flex; flex-direction: column;">';
 		// for (let message of messageArr) {
 		// 	html += `<li>${message.content}</li>`
@@ -71,8 +73,12 @@ export default function ChattingScreen() {
 	}
 
 	function getHeaderSubmit(person) {
-		setPersonNowSending(!person);
+		setPersonNowSending(!personNowSending);
 	}
+
+	useEffect(() => {
+		window.scrollBy(1000, 1000);
+	});
 
 	return (
 		<Wrapper>
@@ -95,8 +101,8 @@ export default function ChattingScreen() {
 					)}
 				})}
 			</MessageWrapper>
-			{/* <pre><br/></pre> */}
-\			<MessageSender onSubmit={getMessageSubmit}></MessageSender>
+			<pre><br/></pre>
+			<MessageSender onSubmit={getMessageSubmit}></MessageSender>
 		</Wrapper>
 	);
 }
@@ -113,7 +119,7 @@ const MessageWrapper = styled.ul`
 	display: flex;
 	flex-direction: column;
 	flex-grow: 1;
-	padding: 0 10px;
+	padding: 0 0 10px 10px;
 	
 	background-color: #ABC1D1;
 `;
