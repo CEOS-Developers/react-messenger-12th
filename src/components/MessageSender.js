@@ -27,22 +27,24 @@ export default function MessageSender() {
 	const [message, setMessage] = useState([]);
 	console.log('checkmessage',message);
 	const [newMessage, setNewMessage] = useState();
-	console.log("in msgsender")
 	let messageToAdd;
 
 	const loading=useFetch(setMessage,"http://localhost:8080/chat");
 
 
 	const addNewChat=(e)=>{
-		if(e.target.value===undefined){
-			return;
-		}
+		
 		setNewMessage(e.target.value);
 		console.log("in newchat",e.target.value)
 	}
 
 	const updateChat =(e)=>{
 		e.preventDefault();
+		//blank handling
+		if(newMessage== undefined){
+			alert("type something!!");
+			return;
+		}
 		setMessage([...message,{'user':true, 'content': newMessage}])
 		//console.log("try",MSGLIST().MSGLISTs);
 		/*
@@ -54,6 +56,25 @@ export default function MessageSender() {
 	}
 
 
+	const useScroll = () => {
+		// state를 생성합니다.
+		const [state, setState] = useState({
+		  x: 0,
+		  y: 0
+		});
+		// scrll의 값을 가져와 state를 갱신합니다.
+		const onScroll = () => {
+		  setState({ y: window.scrollY, x: window.scrollX });
+		};
+		useEffect(() => {
+		  window.addEventListener("scroll", onScroll);
+		  return () => window.removeEventListener("scroll", onScroll);
+		}, []);
+		return state;
+	  };
+
+
+	//어떻게 MSGLIST에 더하는지를 모르겠음........msglist에 접근이 안됌 ,,
 	return <Wrapper>
 		<Form id="add-chat">
 			<Input
