@@ -10,24 +10,26 @@ export default function ChattingScreen() {
 	const COOL = 'https://img.techpowerup.org/200908/NjRiY2JjOGU5YzQz.png';
 	const liLeftside = {
 		display: 'flex',
-		alignItems: 'center'
+		alignItems: 'center',
+		padding: '15px 5px'
 	};
 	const liRightside = {
 		display: 'flex',
 		justifyContent: 'flex-end',
-		alignItems: 'center'
+		alignItems: 'center',
+		padding: '15px 5px'
 	};
 	const EunkoImageStyle = {
 		// display: 'flex',
-		height: '30px',
+		height: '40px',
 		paddingTop: '0%',
-		paddingRight: '5px',
+		paddingRight: '8px',
 		borderRadius: '40%'
 	};
 	const CoolImageStyle = {
-		height: '30px',
+		height: '40px',
 		paddingTop: '0%',
-		paddingLeft: '5px',
+		paddingLeft: '8px',
 		borderRadius: '40%'
 	};
 
@@ -80,12 +82,12 @@ export default function ChattingScreen() {
 						return (
 						<li style={liLeftside} key={index}>
 							<img src="https://img.techpowerup.org/200908/eun.png" style={EunkoImageStyle} />
-							{msg.content}
+							<MessageTextWrapper>{msg.content}</MessageTextWrapper>
 						</li>
 					)} else {
 						return (
 						<li style={liRightside} key={index}>
-							{msg.content}
+							<MessageTextWrapper>{msg.content}</MessageTextWrapper>
 							<img src="https://img.techpowerup.org/200908/NjRiY2JjOGU5YzQz.png" style={CoolImageStyle} />
 						</li>
 					)}
@@ -110,6 +112,15 @@ const MessageWrapper = styled.ul`
 	flex-direction: column;
 `;
 
+const MessageTextWrapper = styled.div`
+	background-color: white;
+	border-radius: 10px;
+	box-shadow: 3px 1px 7px  rgba(0, 0, 0, 0.25);
+
+	width: auto;
+	height: auto;
+	padding: 10px 8px;
+`;
 // const BoxShowingChatting = styled.div`
 // 	flex-grow: 8;
 // `
