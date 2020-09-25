@@ -20,7 +20,16 @@ export default function ChattingScreen() {
   const [MessageList, setMessageList] = useState(MSGLIST);
   const [User, setUser] = useState(true);
 
+  useEffect(() => {
+    window.scrollBy({
+      botton: 100,
+      behavior: "smooth",
+    });
+  }, [MessageList]);
+
   const handleInput = (event) => {
+    event.preventDefault();
+
     setInputText(event.target.value);
   };
 
@@ -33,7 +42,6 @@ export default function ChattingScreen() {
       alert("내용을 입력하세요");
       return;
     }
-
     //concat to previous MessageList
     const nextMessageList = MessageList.concat({
       user: User,

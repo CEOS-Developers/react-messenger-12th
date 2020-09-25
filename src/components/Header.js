@@ -11,6 +11,7 @@ export default function Header(props) {
   return (
     <Profile onClick={handleClick}>
       {/* if user value is false */}
+      {/* I hate this code!!!!!! I want simpler code... */}
       {!props.user && (
         <>
           <img src={images.COOL} />

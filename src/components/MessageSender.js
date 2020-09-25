@@ -12,6 +12,7 @@ export default function MessageSender(props) {
   messageList = messageArray.map((message) => (
     <MessageRow>
       {/* if user is true */}
+      {/* I hate this code!!!!!! I want simpler code... */}
       {message.user && (
         <>
           <img src={images.EUNKO} />
@@ -55,7 +56,6 @@ const MessageContent = styled.div`
   border-radius: 5px;
   list-style: none;
 
-  height: 60px;
   display: flex;
   background-color: white;
 
