@@ -5,8 +5,10 @@ import ChattingScreen from './components/ChattingScreen';
 
 export default function App() {
 	return (
-		<Wrapper>
+		
+		<Wrapper>  {/*Wrapper components are components that surround unknown components and provide a default structure to display the child components.*/}
 			<ChattingScreen></ChattingScreen>
+			
 		</Wrapper>
 	);
 }
