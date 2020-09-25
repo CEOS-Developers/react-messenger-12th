@@ -1,18 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
-const Header = ({ UserList, toggleUser }) => {
+const Header = ({ userList, toggleUser }) => {
     const [userName, setUserName] = useState('고은');
     const [userStatus, setUserStatus] = useState('현재 활동중');
-    const [userImage, setUserImage] = useState(UserList[0]);
+    const [userImage, setUserImage] = useState(userList[1]);
 
     const onClick = () => {
         if (toggleUser()) {
-            setUserImage(UserList[0]);
+            setUserImage(userList[1]);
             setUserName('고은');
         } else {
-            setUserImage(UserList[1]);
-            setUserName('시원');
+            setUserImage(userList[0]);
+            setUserName('정쿨');
         }
     };
 
@@ -22,10 +22,10 @@ const Header = ({ UserList, toggleUser }) => {
                 <UserImage src={userImage}></UserImage>
             </UserProfile>
 
-            <UserInformatino>
+            <UserInformation>
                 <UserName>{userName}</UserName>
                 <UserStatus>{userStatus}</UserStatus>
-            </UserInformatino>
+            </UserInformation>
         </Wrapper>
     );
 };
@@ -40,6 +40,7 @@ const Wrapper = styled.div`
 
     background-color: rgba(255, 255, 255, 0.8);
     position: fixed;
+    top: 0px;
 `;
 
 const UserProfile = styled.button`
@@ -57,7 +58,7 @@ const UserImage = styled.img`
 
 // 버튼 크기에 맞게 조절할 수 있으면 좋을듯
 
-const UserInformatino = styled.div`
+const UserInformation = styled.div`
     display: flex;
     flex-direction: column;
 
@@ -70,5 +71,3 @@ const UserName = styled.div`
 `;
 
 const UserStatus = styled.div``;
-
-const ps = styled.div``;

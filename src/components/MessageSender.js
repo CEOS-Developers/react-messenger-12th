@@ -1,14 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
-const MessageSender = ({ message }) => {
+const MessageSender = ({ status, onChangeMessageList }) => {
+    const [messageContent, setMessageContent] = useState('');
+
+    const onChangeContent = (e) => {
+        setMessageContent(e.target.value);
+    };
+
     const onSubmit = (e) => {
         e.preventDefault();
+        const newMessage = { user: status, content: messageContent };
+        setMessageContent('');
+        onChangeMessageList(newMessage);
     };
+
     return (
         <Wrapper>
             <MessageForm onSubmit={onSubmit}>
-                <MessageContent></MessageContent>
+                <MessageContent value={messageContent} onChange={onChangeContent}></MessageContent>
                 <MessageSendButton type="submit" value="전송"></MessageSendButton>
             </MessageForm>
         </Wrapper>

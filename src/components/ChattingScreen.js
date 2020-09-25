@@ -3,11 +3,11 @@ import styled from 'styled-components';
 
 import Header from './Header';
 import MessageSender from './MessageSender';
+import ChattingMessage from './ChattingMessage';
 
 const ChattingScreen = () => {
     const EUNKO = 'https://img.techpowerup.org/200908/eun.png';
     const COOL = 'https://img.techpowerup.org/200908/NjRiY2JjOGU5YzQz.png';
-    const UserList = [EUNKO, COOL];
     const MSGLIST = [
         { user: true, content: '안녕하세요 12기 프론트엔드 개발자분들' },
         { user: true, content: '저희의 대화를 마음껏 조작해보세요 💌' },
@@ -19,22 +19,38 @@ const ChattingScreen = () => {
         { user: false, content: '그만 말해줘도 돼' },
         { user: true, content: 'ㅠㅠ' },
     ];
+    // false: cool  true: eunko
+    const userList = [COOL, EUNKO];
+    const [status, setStatus] = useState(true);
+    const [messageList, setMessageList] = useState(MSGLIST);
 
-    const [status, setStatus] = useState(false);
+    // switch User function
     const toggleUser = () => {
         if (status) {
             setStatus(false);
+            return false;
         } else {
             setStatus(true);
+            return true;
         }
+    };
 
-        return status;
+    const onChangeMessageList = (newMessage) => {
+        setMessageList(messageList.concat(newMessage));
+        // 왜 push는 안되는지 모르겠습니다...
     };
 
     return (
         <Screen>
-            <Header UserList={UserList} toggleUser={toggleUser}></Header>
-            <MessageSender message={MSGLIST}></MessageSender>
+            <Header userList={userList} toggleUser={toggleUser}></Header>
+            {messageList.map((message, k) => {
+                if (message.user) {
+                    return <ChattingMessage key={k} messageContent={[1, message.content]} userList={userList}></ChattingMessage>;
+                } else {
+                    return <ChattingMessage key={k} messageContent={[0, message.content]} userList={userList}></ChattingMessage>;
+                }
+            })}
+            <MessageSender message={MSGLIST} status={status} onChangeMessageList={onChangeMessageList}></MessageSender>
         </Screen>
     );
 };
@@ -43,5 +59,4 @@ export default ChattingScreen;
 
 const Screen = styled.div`
     height: 100%;
-    background-color: #abc1d1;
 `;
