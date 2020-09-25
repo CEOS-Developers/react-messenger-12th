@@ -77,6 +77,7 @@ export default function ChattingScreen() {
 	return (
 		<Wrapper>
 			<Header onSubmit={getHeaderSubmit}></Header>
+			<pre><br/></pre>
 			<MessageWrapper>
 				{messageArr.map((msg, index) => {
 					if (msg.user) {
@@ -111,6 +112,9 @@ const MessageWrapper = styled.ul`
 	list-style: none;
 	display: flex;
 	flex-direction: column;
+	flex-grow: 1;
+	
+	background-color: #A9D0F5;
 `;
 
 const MessageTextWrapper = styled.div`
