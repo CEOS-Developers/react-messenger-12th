@@ -1,20 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
-const Header = ({ userList, toggleUser }) => {
+const Header = ({ userList, toggleUser, status }) => {
     const [userName, setUserName] = useState('고은');
-    const [userStatus, setUserStatus] = useState('현재 활동중');
+    const [userStatus] = useState('현재 활동중');
     const [userImage, setUserImage] = useState(userList[1]);
 
     const onClick = () => {
-        if (toggleUser()) {
+        toggleUser();
+    };
+
+    // status 상태에 따라 프로필 사진이 바뀜
+    useEffect(() => {
+        if (status) {
             setUserImage(userList[1]);
             setUserName('고은');
         } else {
             setUserImage(userList[0]);
             setUserName('정쿨');
         }
-    };
+    }, [status]);
 
     return (
         <Wrapper>
@@ -44,7 +49,6 @@ const Wrapper = styled.div`
 `;
 
 const UserProfile = styled.button`
-    all: unset;
     margin: 3px 0px 0px 16px;
     width: 70px;
     height: 70px;

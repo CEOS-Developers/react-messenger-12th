@@ -22,8 +22,8 @@ const MessageSender = ({ status, onChangeMessageList }) => {
     return (
         <Wrapper>
             <MessageForm onSubmit={onSubmit}>
-                <MessageContent value={messageContent} onChange={onChangeContent}></MessageContent>
-                <MessageSendButton type="submit" value="전송"></MessageSendButton>
+                <MessageContent value={messageContent} onChange={onChangeContent} />
+                <MessageSendButton type="submit" value="전송" />
             </MessageForm>
         </Wrapper>
     );
@@ -32,6 +32,7 @@ const MessageSender = ({ status, onChangeMessageList }) => {
 export default MessageSender;
 
 const Wrapper = styled.div`
+    width: 100%;
     background-color: white;
     position: fixed;
     opacity: 0.9;
@@ -40,12 +41,11 @@ const Wrapper = styled.div`
 
 const MessageForm = styled.form`
     display: flex;
-    width: 100vw;
     margin: 10px 3vw;
 `;
 
 const MessageContent = styled.input`
-    width: 78vw;
+    flex: 1 1 100px;
     height: 25px;
     padding: 10px;
     margin-right: 10px;
@@ -55,7 +55,7 @@ const MessageContent = styled.input`
 `;
 
 const MessageSendButton = styled.input`
-    width: 12vw;
+    flex: 0.05 0.1 50px;
     height: 45px;
 
     border-radius: 15px;
