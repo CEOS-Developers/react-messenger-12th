@@ -1,25 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const ChattingMessage = ({ messageContent, userList }) => {
+const ChattingMessage = ({ messageContent, messageSender, userList }) => {
     // 정쿨님이라면 style에 row-reverse를 준다.
     return (
         <>
-            {messageContent[0] === 1 ? (
-                <Wrapper>
+            {
+                <Wrapper messageSender={messageSender}>
                     <UserProfile>
-                        <UserImage src={userList[messageContent[0]]} />
+                        <UserImage src={userList[messageSender ? 1 : 0]} />
                     </UserProfile>
-                    <UserContent>{messageContent[1]}</UserContent>
+                    <UserContent>{messageContent}</UserContent>
                 </Wrapper>
-            ) : (
-                <Wrapper style={{ flexDirection: 'row-reverse' }}>
-                    <UserProfile>
-                        <UserImage src={userList[messageContent[0]]} />
-                    </UserProfile>
-                    <UserContent>{messageContent[1]}</UserContent>
-                </Wrapper>
-            )}
+            }
         </>
     );
 };
@@ -28,11 +21,9 @@ export default ChattingMessage;
 
 const Wrapper = styled.div`
     display: flex;
-
+    flex-direction: ${(props) => (props.messageSender ? 'row' : 'row-reverse')};
+    align-items: center;
     height: 70px;
-`;
-const OtherMessage = styled(Wrapper)`
-    flex-direction: row-reverse;
 `;
 
 const UserProfile = styled.div`
@@ -47,6 +38,9 @@ const UserImage = styled.img`
 `;
 
 const UserContent = styled.div`
+    display: flex;
+    align-items: center;
+
     padding: 7px 7px;
     margin: 7.5px;
     height: 32.5px;

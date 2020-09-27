@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-const MessageSender = ({ status, onChangeMessageList }) => {
+const MessageSender = ({ status, handleMessageList }) => {
     const [messageContent, setMessageContent] = useState('');
 
     const onChangeContent = (e) => {
@@ -16,7 +16,7 @@ const MessageSender = ({ status, onChangeMessageList }) => {
         }
         const newMessage = { user: status, content: messageContent };
         setMessageContent('');
-        onChangeMessageList(newMessage);
+        handleMessageList(newMessage);
     };
 
     return (

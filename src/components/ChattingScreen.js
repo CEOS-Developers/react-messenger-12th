@@ -19,9 +19,10 @@ const ChattingScreen = () => {
         { user: false, content: '그만 말해줘도 돼' },
         { user: true, content: 'ㅠㅠ' },
     ];
+
     // false: cool  true: eunko
     const userList = [COOL, EUNKO];
-    const [status, setStatus] = useState(true);
+    const [userStatus, setUserStatus] = useState(true);
     const [messageList, setMessageList] = useState(MESSAGE_LIST);
 
     useEffect(() => {
@@ -30,25 +31,20 @@ const ChattingScreen = () => {
 
     // switch User function
     const toggleUser = () => {
-        setStatus(!status);
+        setUserStatus(!userStatus);
     };
 
-    const onChangeMessageList = (newMessage) => {
+    const handleMessageList = (newMessage) => {
         setMessageList(messageList.concat(newMessage));
-        // 왜 push는 안되는지 모르겠습니다...
     };
 
     return (
         <Screen>
-            <Header userList={userList} toggleUser={toggleUser} status={status}></Header>
+            <Header userImage={userStatus ? EUNKO : COOL} toggleUser={toggleUser} userName={userStatus ? '고은' : '정쿨'}></Header>
             {messageList.map((message, k) => {
-                if (message.user) {
-                    return <ChattingMessage key={k} messageContent={[1, message.content]} userList={userList} />;
-                } else {
-                    return <ChattingMessage key={k} messageContent={[0, message.content]} userList={userList} />;
-                }
+                return <ChattingMessage key={k} messageSender={message.user} messageContent={message.content} userList={userList} />;
             })}
-            <MessageSender message={MESSAGE_LIST} status={status} onChangeMessageList={onChangeMessageList}></MessageSender>
+            <MessageSender message={MESSAGE_LIST} status={userStatus} handleMessageList={handleMessageList}></MessageSender>
             <BottomSpace />
         </Screen>
     );

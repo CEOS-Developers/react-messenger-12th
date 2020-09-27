@@ -1,35 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
-const Header = ({ userList, toggleUser, status }) => {
-    const [userName, setUserName] = useState('고은');
-    const [userStatus] = useState('현재 활동중');
-    const [userImage, setUserImage] = useState(userList[1]);
-
-    const onClick = () => {
-        toggleUser();
-    };
+const Header = ({ userImage, toggleUser, userName }) => {
+    const [now] = useState('현재 활동중');
 
     // status 상태에 따라 프로필 사진이 바뀜
-    useEffect(() => {
-        if (status) {
-            setUserImage(userList[1]);
-            setUserName('고은');
-        } else {
-            setUserImage(userList[0]);
-            setUserName('정쿨');
-        }
-    }, [status]);
 
     return (
         <Wrapper>
-            <UserProfile onClick={onClick}>
+            <UserProfile onClick={toggleUser}>
                 <UserImage src={userImage}></UserImage>
             </UserProfile>
 
             <UserInformation>
                 <UserName>{userName}</UserName>
-                <UserStatus>{userStatus}</UserStatus>
+                <div>{now}</div>
             </UserInformation>
         </Wrapper>
     );
@@ -73,5 +58,3 @@ const UserInformation = styled.div`
 const UserName = styled.div`
     font-size: 25px;
 `;
-
-const UserStatus = styled.div``;
