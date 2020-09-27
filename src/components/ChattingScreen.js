@@ -8,7 +8,7 @@ import ChattingMessage from './ChattingMessage';
 const ChattingScreen = () => {
     const EUNKO = 'https://img.techpowerup.org/200908/eun.png';
     const COOL = 'https://img.techpowerup.org/200908/NjRiY2JjOGU5YzQz.png';
-    const MESSAGELIST = [
+    const MESSAGE_LIST = [
         { user: true, content: '안녕하세요 12기 프론트엔드 개발자분들' },
         { user: true, content: '저희의 대화를 마음껏 조작해보세요 💌' },
         { user: true, content: '상단에 프로필을 눌러서 발신자 변경하면 됩니당~' },
@@ -22,7 +22,7 @@ const ChattingScreen = () => {
     // false: cool  true: eunko
     const userList = [COOL, EUNKO];
     const [status, setStatus] = useState(true);
-    const [messageList, setMessageList] = useState(MESSAGELIST);
+    const [messageList, setMessageList] = useState(MESSAGE_LIST);
 
     useEffect(() => {
         window.scrollBy(0, document.body.scrollHeight);
@@ -48,7 +48,7 @@ const ChattingScreen = () => {
                     return <ChattingMessage key={k} messageContent={[0, message.content]} userList={userList} />;
                 }
             })}
-            <MessageSender message={MESSAGELIST} status={status} onChangeMessageList={onChangeMessageList}></MessageSender>
+            <MessageSender message={MESSAGE_LIST} status={status} onChangeMessageList={onChangeMessageList}></MessageSender>
             <BottomSpace />
         </Screen>
     );
