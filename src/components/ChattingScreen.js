@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-
+import { images } from "./images/image";
 import Header from "./Header";
 import MessageSender from "./MessageSender";
 
@@ -16,16 +16,13 @@ export default function ChattingScreen() {
     { user: false, content: "그만 말해줘도 돼" },
     { user: true, content: "ㅠㅠ" },
   ];
-  const [InputText, setInputText] = useState("");
-  const [MessageList, setMessageList] = useState(MSGLIST);
-  const [User, setUser] = useState(true);
+  const [inputText, setInputText] = useState("");
+  const [messageList, setMessageList] = useState(MSGLIST);
+  const [user, setUser] = useState(true);
 
   useEffect(() => {
-    window.scrollBy({
-      botton: 100,
-      behavior: "smooth",
-    });
-  }, [MessageList]);
+    window.scrollBy(0, document.body.scrollHeight);
+  }, [messageList]);
 
   const handleInput = (event) => {
     event.preventDefault();
@@ -38,16 +35,16 @@ export default function ChattingScreen() {
     event.preventDefault();
 
     //handle exception when user typed nothing
-    if (InputText === "") {
+    if (inputText === "") {
       alert("내용을 입력하세요");
       return;
     }
-    //concat to previous MessageList
-    const nextMessageList = MessageList.concat({
-      user: User,
-      content: InputText,
+    //concat to previous messageList
+    const nextMessageList = messageList.concat({
+      user: user,
+      content: inputText,
     });
-    //update MessageList
+    //update messageList
     setMessageList(nextMessageList);
     setInputText("");
   };
@@ -55,16 +52,31 @@ export default function ChattingScreen() {
   return (
     <>
       {/* child component updates state in parent component   */}
-      <Header user={User} onClick={() => setUser(!User)}></Header>
+      {/* <Header user={user} onClick={() => setUser(!user)}></Header> */}
 
+      <Header
+        user={user ? "고은" : "정쿨"}
+        onClick={() => setUser(!user)}
+        imgUrl={user ? images.EUNKO : images.COOL}
+      ></Header>
       <Chat>
-        <MessageSender {...MessageList}></MessageSender>
+        {/* give <li> structure to each message */}
+        {messageList.map((message, index) => {
+          return (
+            <MessageRow key={index} sending={!message.user}>
+              <Img src={message.user ? images.EUNKO : images.COOL} />
+              <Message>{message.content}</Message>
+            </MessageRow>
+          );
+        })}
+        {/* <MessageSender {...messageList}></MessageSender> */}
       </Chat>
 
-      <InputBox>
-        <input value={InputText} onChange={handleInput} />
-        <button onClick={handleSubmit}>전송</button>
-      </InputBox>
+      <MessageSender
+        {...{ inputText }}
+        {...{ handleInput }}
+        {...{ handleSubmit }}
+      ></MessageSender>
     </>
   );
 }
@@ -72,32 +84,36 @@ export default function ChattingScreen() {
 const Chat = styled.div`
   background-color: #abc1d1;
   padding-top: 120px;
+  padding-bottom: 60px;
 `;
 
-const InputBox = styled.form`
-  height: 60px;
-  width: 100%;
+const MessageRow = styled.li`
+  list-style: none;
   display: flex;
-  justify-content: space-around;
+  flex-shrink: 0;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.05);
+  position: relative;
+  flex-direction: ${(props) => (props.sending ? "row-reverse" : "row")};
+`;
 
-  input {
-    height: 50px;
-    width: 90%;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    border-radius: 20px;
-  }
+const Message = styled.div`
+  border: 1px solid white;
+  border-radius: 5px;
+  list-style: none;
 
-  *:focus {
-    outline: none;
-  }
+  display: flex;
+  background-color: white;
 
-  button {
-    width: 7%;
-    height: 50px;
-    background-color: yellow;
-    border-radius: 20px;
-    border: none;
-  }
+  height: 50px;
+  align-items: center;
+  margin: 10px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+`;
+
+const Img = styled.img`
+  width: 50px;
+  height: 50px;
+  border-radius: 20px;
+  margin: 10px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
 `;

@@ -1,67 +1,46 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
-import { images } from "./images/image";
-export default function MessageSender(props) {
-  //change object input into array
-  const messageArray = Object.values(props);
 
-  //give <li> structure to each message
-  let messageList;
-
-  useEffect(() => {}, []);
-  messageList = messageArray.map((message) => (
-    <MessageRow>
-      {/* if user is true */}
-      {/* I hate this code!!!!!! I want simpler code... */}
-      {message.user && (
-        <>
-          <img src={images.EUNKO} />
-          <MessageContent>{message.content}</MessageContent>
-        </>
-      )}
-      {/* if user is false */}
-      {!message.user && (
-        <MessageAlignedRight>
-          {/* make message position right  */}
-          <MessageContent>{message.content}</MessageContent>
-          <img src={images.COOL} />
-        </MessageAlignedRight>
-      )}
-    </MessageRow>
-  ));
-  return <>{messageList}</>;
+export default function MessageSender({
+  inputText,
+  handleInput,
+  handleSubmit,
+}) {
+  return (
+    <InputBox>
+      <Input value={inputText} onChange={handleInput} />
+      <button onClick={handleSubmit}>전송</button>
+    </InputBox>
+  );
 }
 
-const MessageRow = styled.li`
-  list-style: none;
-  display: flex;
-  align-items: center;
-  position: relative;
-  img {
-    width: 50px;
-    height: 50px;
-    border-radius: 20px;
-  }
-`;
-// make message position right
-const MessageAlignedRight = styled.div`
+const InputBox = styled.form`
+  height: 60px;
   width: 100%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-around;
   align-items: center;
+  background-color: rgba(0, 0, 0, 0.05);
+  position: fixed;
+  bottom: 0;
+
+  *:focus {
+    outline: none;
+  }
+
+  button {
+    width: 7%;
+    height: 50px;
+    background-color: yellow;
+    border-radius: 20px;
+    border: none;
+  }
 `;
-
-const MessageContent = styled.div`
-  border: 1px solid white;
-  border-radius: 5px;
-  list-style: none;
-
-  display: flex;
-  background-color: white;
-
+const Input = styled.input`
   height: 50px;
-  align-items: center;
-  margin: 10px;
+  width: 90%;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
 `;
 
 /*
@@ -71,4 +50,15 @@ absolute를 통한 배치는 지양하는게 좋다?
 
 map함수 사용하기 위해 object를 array로 바꾸기.
 
-*/
+flex-direction : element 방향 뒤집기 가능.
+
+props를 이용해 state, state handler 넘겨주기.
+
+ { ...{ sth} }
+ 과 {...sth} 차이점
+
+ map에서 key, index 사용하는 이유?
+
+
+
+ */

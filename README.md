@@ -47,9 +47,45 @@ PR 보내실땐 양식 맞춰주시고, 이번주 부터는 now로 배포한 링
 ---
 
 - Virtual DOM이 무엇일까요?
+  A. 리액트는 Virtual DOM 방식을 사용하여 DOM 업데이트를 추상화함으로써 DOM 처리 횟수를 최소화하고 효율적으로 진행한다.
+  Virtual DOM을 사용하면 실제 DOM에 접근하여 조작하는 대신 이를 추상화한 자바스크립트 객체를 구성하여 사용한다. DOM의 가벼운 사본과 비슷하다.
+  리액트에서 데이터가 변하여 웹 브라우저에 실제 DOM을 업데이트할 때는 다음 세 절차를 밟는다.
+
+  1.  데이터를 업데이트하면 전체 UI를 Virtual DOM에 리렌더링한다.
+  2.  이전 Virtual DOM에 있던 내용과 현재 내용을 비교한다.
+  3.  바뀐 부분만 실제 DOM에 적용한다.
+
+  리액트 매뉴얼
+  "우리는 다음 문제를 해결하려고 리액트를 만들었습니다.
+  지속적으로 데이터가 변화하는 대규모 어플리케이션 구축하기."
+
+  리액트와 Virtual DOM이 언제나 제공할 수 있는 것은 바로 업데이트 처리 간결성이다. UI를 업데이트하는 과정에서 생기는 복잡함을 모두 해소하고 쉽게 업데이트할 수 있다.  
+   출처 : 리액트를 다루는 기술
+
 - 미션을 진행하면서 느낀, 리액트를 사용하는 장점이 있었다면?
+  A. 바닐라 JS 를 이용할 때는 DOM에 접근하는게 복잡하고 번거로웠는데 REACT에서는 그것이 간편해서 좋았다.
+  그리고 state를 이용해 변수를 관리할 수 있다는 것도 편리했다.
+
 - 리액트에서는 상태를 어떻게 관리할까요?
+  A. useState를 이용해 선언하고 setState를 이용해 업데이트한다. 추가로 child component에서 parent component의 state를 접근할 때는 props를 이용한다.
+
 - styled-components 사용후기 (CSS와 비교)
+  A. 컴포넌트 단위로 CSS를 적용할 수 있으니 가독성이 높고, 재사용하기 쉽다.
+  사용할 때도 컴포넌트 단위로 쓰니 기존 컴포넌트들과 일관성을 줄 수 있다.
+  props를 이용해 조건, 상황에 따라 CSS를 다르게 적용할 수 있다.
+
+### 어려웠던 점
+
+- parent component의 state를 child component에서 접근, 수정하기.
+  -> props를 이용해서 state, update-state-function을 child component로 넘겨준다.
+- CSS.. (element를 양 끝에 배치시키기, header 위치 고정시키기 등...)
+
+### 코드 리뷰를 통해 배운 점
+
+- flex-direction : row-reverse
+  -> element 뒤집기
+- props, 삼항 연산자를 이용해 코드 중복 줄이기.
+- styled-component에 props를 줘서 조건에 따라 CSS 다르게 구성하기.
 
 ### 필수 요건
 
