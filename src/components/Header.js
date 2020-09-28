@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
-import styled from 'styled-components'
+import React, { useState } from 'react';
+import styled from 'styled-components';
 
 export default function Header(props) {
   // 프로필 누구인지
-  const [person, setPerson] = useState(true)
+  const [person, setPerson] = useState(false);
 
   const inputTagStyle = {
     // 메시지 입력창
@@ -11,31 +11,31 @@ export default function Header(props) {
     height: '100%',
     width: '70px',
     borderRadius: '30%',
-  }
+  };
 
   const showWhoActiveTextStyle = {
     // "OO 현재 활동중"
-    displya: 'flex',
+    // display: 'flex',
     paddingLeft: '15px',
     alingContent: 'center',
 
     paddingTop: '5px', // 글자 가운데 정렬이 안되어서 임시방편
-  }
+  };
 
   const activeTextStyle = {
     display: 'flex',
-  }
+  };
 
   // ChattingScreen컴포넌트에 현재 프로필 전달
   const formSubmit = (e) => {
-    e.preventDefault()
-    props.onSubmit(person)
-  }
+    e.preventDefault();
+    props.onSubmit(person);
+  };
 
   // 프로필 클릭 시 변경
   const onChangePerson = (e) => {
-    setPerson(!person)
-  }
+    setPerson(!person);
+  };
 
   return (
     <Wrapper>
@@ -49,6 +49,7 @@ export default function Header(props) {
               ? 'https://img.techpowerup.org/200908/eun.png'
               : 'https://img.techpowerup.org/200908/NjRiY2JjOGU5YzQz.png'
           }
+          alt=""
         />
       </form>
       <div style={showWhoActiveTextStyle}>
@@ -56,7 +57,7 @@ export default function Header(props) {
         <span style={activeTextStyle}>현재 활동중</span>
       </div>
     </Wrapper>
-  )
+  );
 }
 const Wrapper = styled.div`
   height: 70px;
@@ -71,10 +72,10 @@ const Wrapper = styled.div`
   display: flex;
   position: absolute;
   position: fixed;
-`
+`;
 
 const PersonNameWrapper = styled.span`
   display: flex;
   height: auto;
   font-size: 25px;
-`
+`;

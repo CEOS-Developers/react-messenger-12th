@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 
 export default function MessageView(props) {
@@ -34,7 +34,7 @@ const Wrapper = styled.ul`
 
 const MessageContainer = styled.li`
   display: flex;
-  alignitems: center;
+  align-items: center;
   flex-direction: ${(props) => (props.message.user ? 'row' : 'row-reverse')};
   padding: 15px 0;
 `
@@ -42,7 +42,6 @@ const MessageContainer = styled.li`
 const MessageSenderImage = styled.img`
   display: flex;
   height: 50px;
-  ${'' /* paddingTop: 0%; */}
   border-radius: 40%;
   box-shadow: 3px 1px 7px rgba(0, 0, 0, 0.25);
 `
