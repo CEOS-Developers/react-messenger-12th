@@ -2,7 +2,10 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 export default function Header(props) {
-  // 프로필 누구인지
+  const T_PersonImage = 'https://img.techpowerup.org/200908/eun.png';
+  const F_PersonImage =
+    'https://img.techpowerup.org/200908/NjRiY2JjOGU5YzQz.png';
+
   const [person, setPerson] = useState(false);
 
   const inputTagStyle = {
@@ -52,6 +55,7 @@ export default function Header(props) {
           alt=""
         />
       </form>
+
       <div style={showWhoActiveTextStyle}>
         <PersonNameWrapper>{person ? '고은\n' : '정쿨\n'}</PersonNameWrapper>
         <span style={activeTextStyle}>현재 활동중</span>
@@ -79,3 +83,5 @@ const PersonNameWrapper = styled.span`
   height: auto;
   font-size: 25px;
 `;
+
+// const ActivatePersonProfile = styled.
