@@ -1,20 +1,20 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
 
-import ChattingScreen from './components/ChattingScreen';
+import ChattingScreen from './components/ChattingScreen'
 
 export default function App() {
-	return (
-		<Wrapper>
-			<ChattingScreen></ChattingScreen>
-		</Wrapper>
-	);
+  return (
+    <Wrapper>
+      <ChattingScreen></ChattingScreen>
+    </Wrapper>
+  )
 }
 
 const Wrapper = styled.div`
-	height: 100vh;
-	& * {
-		font-family: sans-serif;
-	}
-	background: #ABC1D1;
-`;
+  height: 100vh;
+  & * {
+    font-family: sans-serif;
+  }
+  background: #abc1d1;
+`
