@@ -1,10 +1,44 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
+import { images } from "./images/image";
 
-export default function Header() {
-	return <Wrapper>발신자 변경해주는 상단바</Wrapper>;
+export default function Header({ user, onClick, imgUrl }) {
+  //change parent's user state using props
+  const handleClick = () => {
+    onClick();
+  };
+
+  return (
+    <Profile onClick={handleClick}>
+      {/* if user value is false */}
+      {/* I hate this code!!!!!! I want simpler code... */}
+
+      <Img src={imgUrl} />
+      <div>
+        <h2 style={{ marginBottom: "0" }}> {user} </h2>
+        <br />
+      </div>
+    </Profile>
+  );
 }
-const Wrapper = styled.div`
-	background-color: black;
-	color: white;
+
+const Profile = styled.div`
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  div {
+    margin-left: 10px;
+  }
+
+  padding-left: 20px;
+  height: 120px;
+  z-index: 1;
+  position: fixed;
+`;
+
+const Img = styled.img`
+  border-radius: 20px;
+  width: 100px;
+  height: 100px;
 `;
