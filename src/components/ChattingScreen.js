@@ -10,7 +10,7 @@ import arrayMessage from './arrayMessage.json';
 export default function ChattingScreen() {
   const [messageArr, setMessageArr] = useState(arrayMessage.arrMessage);
 
-  const [personNowSending, setPersonNowSending] = useState(false);
+  const [personSendingMsg, setPersonSendingMsg] = useState(false);
 
   function addMessageToArr(messageText) {
     if (!messageText) {
@@ -21,14 +21,14 @@ export default function ChattingScreen() {
     setMessageArr([
       ...messageArr,
       {
-        user: personNowSending,
+        user: personSendingMsg,
         content: messageText,
       },
     ]);
   }
 
-  function getHeaderSubmit(person) {
-    setPersonNowSending(!personNowSending);
+  function togglePersonSendingMsg() {
+    setPersonSendingMsg(!personSendingMsg);
   }
 
   useEffect(() => {
@@ -37,7 +37,7 @@ export default function ChattingScreen() {
 
   return (
     <Wrapper>
-      <Header onSubmit={getHeaderSubmit}></Header>
+      <Header {... { togglePersonSendingMsg }} personSendingMsg={personSendingMsg}></Header>
       <pre><br /></pre>
       <MessageView messageArr={messageArr} />
       <pre><br /></pre>
