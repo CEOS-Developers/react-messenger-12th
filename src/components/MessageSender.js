@@ -4,11 +4,12 @@ import styled from 'styled-components';
 export default function MessageSender({ addMessageToArr }) {
   const [message, setMessage] = useState('');
 
-  // 입력받은 메시지를 ChattingScreen로 전달.
   const getMessageFromMessageSender = (e) => {
     e.preventDefault();
-    addMessageToArr(message);
-    document.querySelector('#chat-box').value = '';
+	addMessageToArr(message);
+	console.log('TEST : ', e.target.childNodes[0].value);
+	// document.querySelector('#chat-box').value = '';
+	e.target.childNodes[0].value = '';	// 윗줄보다 이것이 더 좋을까 ?
     setMessage(''); // 메시지 한번 전송 후, 메시지state를 초기화 해야함.
   };
 
@@ -18,7 +19,7 @@ export default function MessageSender({ addMessageToArr }) {
 
   return (
     <Wrapper onSubmit={getMessageFromMessageSender}>
-      <ChatBox type="text" id="chat-box" onChange={onChangeMessage} />
+      <ChatBox type="text" onChange={onChangeMessage} />
       <SubmitButton type="submit" value="전송" />
     </Wrapper>
   );
