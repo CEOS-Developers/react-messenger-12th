@@ -1,0 +1,39 @@
+{
+    "arrMessage": [{
+            "user": true,
+            "content": "안녕하세요 12기 프론트엔드 개발자분들"
+        },
+        {
+            "user": true,
+            "content": "여러분께 소개드리고 싶은 사람이 있어요~"
+        },
+        {
+            "user": true,
+            "content": "바로 12기의 장창훈 이라고 하시는 분입니다 !!!"
+        },
+        {
+            "user": false,
+            "content": "안녕 은아"
+        },
+        {
+            "user": false,
+            "content": "뭐해 ?"
+        },
+        {
+            "user": true,
+            "content": "지금 장창훈님을 소개하고있어"
+        },
+        {
+            "user": false,
+            "content": "나도 아니까  "
+        },
+        {
+            "user": false,
+            "content": "그만 말해줘도 돼"
+        },
+        {
+            "user": true,
+            "content": "ㅠㅠ..."
+        }
+    ]
+}
