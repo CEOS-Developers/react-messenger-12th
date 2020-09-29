@@ -45,8 +45,8 @@ const Wrapper = styled.form`
 const ChatBox = styled.input`
   width: 1150px;
   height: 60%;
-  paddingleft: 12px;
-  borderradius: 20px 20px 20px 20px;
+  padding-left: 12px;
+  border-radius: 20px 20px 20px 20px;
   border: 1px solid rgba(0, 0, 0, 0.3);
   background: rgba(255, 255, 255, 0.3);
   outline: none;
