@@ -22,51 +22,57 @@ export default function MessageSender({ addToList }) {
   return (
     <Wrapper onSubmit={handleSubmitMessage}>
       <InputMessage name="message" value={message} onChange={handleChangeMessage} />
-      <InputButton type="submit">전송</InputButton>
+      <Button type="submit">전송</Button>
     </Wrapper>
   );
 }
+
+const Wrapper = styled.form`
+  height: 70px;
+
+  // 하단에 고정
+  position: fixed;
+  left: 70px;
+  bottom: 0;
+  right: 0;
+
+  border-radius: 5px;
+  color: white;
+  background-color: white;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
 const InputMessage = styled.input`
-  width: 90%;
-  height: 50px;
-  padding: 0 5px;
+  height: 1rem;
+  width: 94%;
+
+  margin: 6px;
+  padding: 10px 6px;
 
   border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 15px;
 
   text-align: left;
-  font-size: 15px;
+  // font-size: 12px;
+
+  outline: none;
 `;
 
-const InputButton = styled.button`
-  width: 60px;
-  height: 50px;
+const Button = styled.button`
+  width: 45px;
+  height: 45px;
 
-  margin-right: 20px;
+  margin: 0 6px;
   color: black;
   background-color: rgb(255, 224, 102);
 
-  border: none;
+  border: 1px solid yellow;
   border-radius: 20px;
 
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
 
-  font-size: 18px;
-`;
-
-const Wrapper = styled.form`
-  // 하단에 고정
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-
-  height: 70px;
-
-  background-color: white;
-
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  color: white;
-  padding: 4px 16px;
+  font-size: 14px;
 `;
