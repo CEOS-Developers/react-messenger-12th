@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import ChattingScreen from './ChattingScreen';
+
 
 export default function MessageSender({
   addNewChat,
@@ -24,8 +24,8 @@ export default function MessageSender({
 const Wrapper = styled.div`
   position: fixed;
   bottom: 0px;
-  left: 0px;
-  right: 0px;
+  width: 100%;
+ 
 `;
 const Form = styled.form`
   display: flex;

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 export default function Header({ changeUser, user, imgURL }) {
@@ -14,7 +14,10 @@ export default function Header({ changeUser, user, imgURL }) {
     </Wrapper>
   );
 }
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+position: fixed;
+width: 100%;
+`
 const ProfileCard = styled.div`
   background-color: white;
   color: black;

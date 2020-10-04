@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-
 import Header from './Header';
 import MessageSender from './MessageSender';
 
@@ -20,7 +19,7 @@ export default function ChattingScreen() {
     { user: true, content: 'ㅠㅠ' },
   ];
 
-  const [message, setMessage] = useState(MSGLIST);
+  const [messageList, setMessage] = useState(MSGLIST);
   const [newMessage, setNewMessage] = useState({
     user: false,
     content: '',
@@ -28,16 +27,14 @@ export default function ChattingScreen() {
 
   const addNewChat = (e) => {
     e.preventDefault();
-    if (newMessage.content == '') {
+    if (newMessage.content === '') {
       alert('type something!!');
       return;
     }
-    setMessage([...message, newMessage]);
+    setMessage([...messageList, newMessage]);
     setNewMessage({ ...newMessage, content: '' });
   };
 
-  console.log(' new', newMessage.content);
-  console.log(' message', ...message);
 
   const changeInputChat = (e) => {
     const { name, value } = e.target; //name으로 구별, value는 값 자체
@@ -54,7 +51,7 @@ export default function ChattingScreen() {
   };
 
   useEffect(() => {
-    window.scrollBy(1000, window.innerHeight);
+    window.scrollBy(1000, document.body.scrollHeight);
   }, [newMessage]);
 
   return (
@@ -65,7 +62,7 @@ export default function ChattingScreen() {
         imgURL={newMessage.user ? EUNKO : COOL}
       ></Header>
       <MessageList>
-        {message.map((message, index) => {
+        {messageList.map((message, index) => {
           if (message.user) {
             return (
               <ChatLine left>
@@ -98,6 +95,7 @@ const Wrapper = styled.div`
 const MessageList = styled.div`
   background-color: #abc7d1;
   overflow-y: hidden;
+  padding: 100px 10px;
 `;
 
 const ChatLine = styled.div`
@@ -115,10 +113,7 @@ const ChatBox = styled.div`
 display:table;
 background: white;
 padding 1rem; 
-margin-left:10px;
-margin-right:10px;
-margin-top:15px;
-border-radius : 20px;
+margin:15px 10px 0px 10px;
 font-size:15px;
 box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
 
