@@ -1,10 +1,39 @@
 import React from 'react';
 import styled from 'styled-components';
 
-export default function Header() {
-	return <Wrapper>발신자 변경해주는 상단바</Wrapper>;
+export default function Header({ changeUser, user, imgURL }) {
+  return (
+    <Wrapper>
+      <ProfileCard onClick={changeUser}>
+        <ProfileImage src={imgURL} width='70' height='70' />
+        <ProfileInfo>
+          <Name>{user}</Name>
+          <Status>현재 활동 중</Status>
+        </ProfileInfo>
+      </ProfileCard>
+    </Wrapper>
+  );
 }
 const Wrapper = styled.div`
-	background-color: black;
-	color: white;
+position: fixed;
+width: 100%;
+`
+const ProfileCard = styled.div`
+  background-color: white;
+  color: black;
+  display: flex;
 `;
+const ProfileInfo = styled.div`
+  flex-direction: column;
+`;
+const ProfileImage = styled.img`
+  border-radius: 40%;
+  margin: 15px 15px 0px 15px;
+  display: flex;
+`;
+
+const Name = styled.ul`
+  font-size: 20px;
+`;
+
+const Status = styled.ul``;
