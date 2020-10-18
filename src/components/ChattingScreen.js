@@ -35,7 +35,7 @@ const ChattingScreen = () => {
     };
 
     const handleMessageList = (newMessage) => {
-        setMessageList(messageList.concat(newMessage));
+        setMessageList([...messageList, newMessage]);
     };
 
     return (
@@ -44,7 +44,7 @@ const ChattingScreen = () => {
             {messageList.map((message, k) => {
                 return <ChattingMessage key={k} messageSender={message.user} messageContent={message.content} userList={userList} />;
             })}
-            <MessageSender message={MESSAGE_LIST} status={userStatus} handleMessageList={handleMessageList}></MessageSender>
+            <MessageSender status={userStatus} handleMessageList={handleMessageList}></MessageSender>
             <BottomSpace />
         </Screen>
     );
@@ -52,7 +52,10 @@ const ChattingScreen = () => {
 
 export default ChattingScreen;
 
-const Screen = styled.div``;
+const Screen = styled.div`
+    padding-top: 60px;
+    background-color: #abc1d1;
+`;
 
 const BottomSpace = styled.div`
     height: 75px;
