@@ -1,12 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
-const MenuIcon = ({ IMAGE }) => {
+const MenuIcon = ({ IMAGE, link }) => {
   return (
     <Wrapper>
-      <PersonButton>
-        <PersonImage src={IMAGE} />
-      </PersonButton>
+      <Link to={link}>
+        <MenuButton>
+          <MenuImage src={IMAGE} />
+        </MenuButton>
+      </Link>
     </Wrapper>
   );
 };
@@ -20,12 +23,12 @@ const Wrapper = styled.div`
   padding-bottom: 40px;
 `;
 
-const PersonButton = styled.button`
+const MenuButton = styled.button`
   height: 25px;
   width: 25px;
   cursor: pointer;
 `;
 
-const PersonImage = styled.img`
+const MenuImage = styled.img`
   width: 25px;
 `;

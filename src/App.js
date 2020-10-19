@@ -1,22 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link, Route, BrowserRouter as Router } from 'react-router-dom';
 
-import ChattingScreen from './components/ChattingScreen';
-import UserPage from './components/UserPage';
+import PageLayout from './components/PageLayout';
 
 const App = () => {
   return (
     <Wrapper>
-      <UserPage />
-      <Router>
-        <Link to="/ChattingScreen">
-          <button>react-router</button>
-        </Link>
-        <Route path="/ChattingScreen" component={ChattingScreen}>
-          <ChattingScreen />
-        </Route>
-      </Router>
+      <PageLayout />
     </Wrapper>
   );
 };

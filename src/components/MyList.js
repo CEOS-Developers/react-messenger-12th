@@ -1,17 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import JINOIMAGE from '../images/JINOIMAGE.jpg';
-
-const ListFrame = () => {
+const ListFrame = ({ userImage, userName, statusMessage }) => {
   return (
     <Wrapper>
       <ProfilePicture>
-        <ProfileImage src={JINOIMAGE} />
+        <ProfileImage src={userImage} />
       </ProfilePicture>
       <UserName>
-        지노
-        <UserStatusMessage>hello react</UserStatusMessage>
+        {userName}
+        <UserStatusMessage>{statusMessage}</UserStatusMessage>
       </UserName>
     </Wrapper>
   );
@@ -31,7 +29,7 @@ const Wrapper = styled.div`
 
 const ProfilePicture = styled.div`
   width: 53px;
-  height: 55px;
+  height: 53px;
 `;
 
 const ProfileImage = styled.img`

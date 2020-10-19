@@ -1,48 +1,33 @@
 import React from 'react';
 import styled from 'styled-components';
-import MyList from './ListFrame';
-import MenuBar from './MenuBar';
+
+import FriendList from './FriendList';
+import MyList from './MyList';
+
+import { userInfo, MyInfo } from './UserInfo.js';
 
 const UserPage = () => {
   return (
-    <Wrapper>
-      <MenuBar />
-      <AllList>
-        <ListName>친구</ListName>
-        <FriendNameForm>
-          <InputFriendName placeholder="🔎이름 검색" />
-        </FriendNameForm>
-        <MyList style={{ marginBottom: '5px' }} />
-        <DivisionLineBox>
-          <DivisionLine />
-        </DivisionLineBox>
-        <FriendListName>친구 436</FriendListName>
-        <FriendList>
-          <MyList />
-        </FriendList>
-      </AllList>
-    </Wrapper>
+    <>
+      <FriendNameForm>
+        <InputFriendName placeholder="🔎이름 검색" />
+      </FriendNameForm>
+      <MyList
+        style={{ marginBottom: '5px' }}
+        userName={MyInfo.name}
+        userImage={MyInfo.image}
+        statusMessage={MyInfo.statusMessage}
+      />
+      <DivisionLineBox>
+        <DivisionLine />
+      </DivisionLineBox>
+      <FriendListName>친구 {userInfo.length}</FriendListName>
+      <FriendList />
+    </>
   );
 };
 
 export default UserPage;
-
-const Wrapper = styled.div`
-  height: 100%;
-  display: flex;
-  -webkit-user-select: none;
-`;
-
-const AllList = styled.div`
-  width: 100%;
-  padding-top: 30px;
-`;
-
-const ListName = styled.div`
-  padding-left: 20px;
-  font-size: 20px;
-  font-weight: 600;
-`;
 
 const FriendNameForm = styled.form`
   display: flex;
@@ -75,4 +60,3 @@ const FriendListName = styled.div`
   font-size: 11px;
   color: #8e8d8d;
 `;
-const FriendList = styled.ul``;
