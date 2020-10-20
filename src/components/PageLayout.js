@@ -5,30 +5,31 @@ import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
 import UserPage from './UserPage';
 import ChatPage from './ChatPage';
 import MorePage from './MorePage';
+import ChattingScreen from './ChattingScreen';
 
 import MenuBar from './MenuBar';
 
 const PageLayout = () => {
   const [listName, setListName] = useState('친구');
+  const [isMenuBar, setIsMenuBar] = useState(true);
 
   const handleListName = (name) => {
-    console.log(name);
     setListName(name);
   };
-
+  const handleisMenuBar = () => {
+    setIsMenuBar(!isMenuBar);
+  };
   return (
     <Wrapper>
-      <Router>
-        <MenuBar handleListName={handleListName} />
-        <AllList>
-          <ListName>{listName}</ListName>
-          <Switch>
-            <Route exact path="/" component={UserPage} />
-            <Route path="/chat" component={ChatPage} />
-            <Route path="/more" component={MorePage} />
-          </Switch>
-        </AllList>
-      </Router>
+      {isMenuBar ? <MenuBar handleisMenuBar={handleisMenuBar} /> : <></>}
+      <AllList>
+        {/* <Switch> */}
+        <Route exact path="/" component={UserPage} />
+        <Route path="/chat" component={ChatPage} />
+        <Route path="/more" component={MorePage} />
+        <Route path="/chatMessage" component={ChattingScreen} />
+      </AllList>
+      {/* </Switch> */}
     </Wrapper>
   );
 };
@@ -43,12 +44,6 @@ const Wrapper = styled.div`
 const AllList = styled.div`
   width: 100%;
   padding-top: 30px;
-`;
-
-const ListName = styled.div`
-  padding-left: 20px;
-  font-size: 20px;
-  font-weight: 600;
 `;
 
 export default PageLayout;

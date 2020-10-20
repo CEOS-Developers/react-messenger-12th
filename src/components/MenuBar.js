@@ -8,13 +8,17 @@ import THREEDOTSIMAGE from '../images/threedots.png';
 import SETTINGSIMAGE from '../images/settings.png';
 import ALARMIMAGE from '../images/alarm.png';
 
-const MenuBar = ({}) => {
+const MenuBar = ({ handleisMenuBar }) => {
   return (
     <Wrapper>
       <MenuIcon IMAGE={PERSONIMAGE} link={'/'} />
       <MenuIcon IMAGE={CHATIMAGE} link={'/chat'} />
       <MenuIcon IMAGE={THREEDOTSIMAGE} link={'/more'} />
-      <MenuIcon IMAGE={SETTINGSIMAGE} link={'/'} />
+      <MenuIcon
+        IMAGE={SETTINGSIMAGE}
+        link={'/chatMessage'}
+        handleisMenuBar={handleisMenuBar}
+      />
       <MenuIcon IMAGE={ALARMIMAGE} link={'/'} />
     </Wrapper>
   );

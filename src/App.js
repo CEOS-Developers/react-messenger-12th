@@ -1,13 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
-
+import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
 import PageLayout from './components/PageLayout';
 
 const App = () => {
   return (
-    <Wrapper>
-      <PageLayout />
-    </Wrapper>
+    <Router>
+      <Wrapper>
+        <PageLayout />
+      </Wrapper>
+    </Router>
   );
 };
 

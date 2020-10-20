@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import ListName from './ListName';
+import FindForm from './FindForm';
 import FriendList from './FriendList';
 import MyList from './MyList';
 
@@ -9,9 +11,8 @@ import { userInfo, MyInfo } from './UserInfo.js';
 const UserPage = () => {
   return (
     <>
-      <FriendNameForm>
-        <InputFriendName placeholder="🔎이름 검색" />
-      </FriendNameForm>
+      <ListName name={'친구'} />
+      <FindForm />
       <MyList
         style={{ marginBottom: '5px' }}
         userName={MyInfo.name}
@@ -28,22 +29,6 @@ const UserPage = () => {
 };
 
 export default UserPage;
-
-const FriendNameForm = styled.form`
-  display: flex;
-  padding: 12px;
-  padding-left: 20px;
-`;
-
-const InputFriendName = styled.input`
-  flex: 1 1 10px;
-  padding: 8px;
-  height: 12px;
-  border: 1px solid #f0efef;
-  border-radius: 12.5px;
-  font-size: 12.5px;
-  background-color: #f5f5f5;
-`;
 
 const DivisionLineBox = styled.div`
   display: flex;
