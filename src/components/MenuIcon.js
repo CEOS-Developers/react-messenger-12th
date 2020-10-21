@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 
 const MenuIcon = ({ IMAGE, link, handleisMenuBar }) => {
   return (
-    <Wrapper onClick={handleisMenuBar}>
-      <Link to={link}>
+    <Wrapper>
+      <Link to={link} onClick={handleisMenuBar}>
         <MenuButton>
           <MenuImage src={IMAGE} />
         </MenuButton>

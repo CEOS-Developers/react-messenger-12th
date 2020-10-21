@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import ListName from './ListName';
 import FindForm from './FindForm';
-import MyList from './MyList';
+import ChatList from './ChatList';
 
 import { chatInfo } from './UserInfo';
 
@@ -14,11 +14,12 @@ const ChatPage = () => {
       <FindForm />
       {chatInfo.map((chat, index) => {
         return (
-          <MyList
+          <ChatList
             key={index}
             userName={chat.name}
             userImage={chat.image}
-            statusMessage={chat.lastMessage}
+            lastMessage={chat.lastMessage}
+            lastMessageTime={chat.lastMessageTime}
           />
         );
       })}
