@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 import ListName from './ListName';
@@ -9,10 +9,18 @@ import ListFrame from './MyList';
 import { userInfo, MyInfo } from './UserInfo.js';
 
 const UserPage = () => {
+  const [userInformation, setUserInformation] = useState(userInfo);
+  const onChangeName = (n) => {
+    const list = userInfo.filter((user) => {
+      return user.name === n;
+    });
+    setUserInformation(list);
+  };
+
   return (
     <>
       <ListName name={'친구'} />
-      <FindForm holder={'이름 검색'} />
+      <FindForm holder={'이름 검색'} onChangeName={onChangeName} />
       <ListFrame
         style={{ marginBottom: '5px' }}
         userName={MyInfo.name}
@@ -24,7 +32,7 @@ const UserPage = () => {
         <DivisionLine />
       </DivisionLineBox>
       <FriendListName>친구 {userInfo.length}</FriendListName>
-      <FriendList />
+      <FriendList userInfo={userInformation} />
     </>
   );
 };

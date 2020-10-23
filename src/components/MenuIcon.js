@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const MenuIcon = ({ IMAGE, handleisMenuBar }) => {
+const MenuIcon = ({ IMAGE }) => {
   return (
     <Wrapper>
-      <MenuButton onClick={handleisMenuBar}>
+      <MenuButton>
         <MenuImage src={IMAGE} />
       </MenuButton>
     </Wrapper>
@@ -17,7 +17,7 @@ const Wrapper = styled.div`
   display: flex;
   text-align: center;
   justify-content: center;
-  padding-bottom: 40px;
+  margin-bottom: 40px;
 `;
 
 const MenuButton = styled.button`

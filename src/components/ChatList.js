@@ -7,20 +7,16 @@ const ChatList = ({
   userName,
   lastMessage,
   lastMessageTime,
-  handleisMenuBar,
-  onChangeUserName,
   onChangeMessage,
 }) => {
   const onClick = () => {
-    handleisMenuBar();
-    onChangeUserName(userName);
     onChangeMessage(userName);
   };
 
   return (
     <Link
       style={{ textDecoration: 'none' }}
-      to="/chatMessage"
+      to={`/message/${userName}`}
       onClick={onClick}
     >
       <Wrapper>

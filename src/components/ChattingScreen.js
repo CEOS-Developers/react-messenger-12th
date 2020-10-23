@@ -52,7 +52,8 @@ const ChattingScreen = ({ WHO_MESSAGE }) => {
 export default ChattingScreen;
 
 const Screen = styled.div`
-  padding-top: 60px;
+  height: 100vh;
+  padding-top: 80px;
   background-color: #abc1d1;
 `;
 

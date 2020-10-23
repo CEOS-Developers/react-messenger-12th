@@ -2,9 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 import MyList from './MyList';
-import { userInfo } from './UserInfo.js';
 
-const FriendList = () => {
+const FriendList = ({ userInfo }) => {
   return (
     <Wrapper>
       {userInfo.map((user, index) => {

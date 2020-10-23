@@ -1,13 +1,13 @@
 import React from 'react';
-import styled from 'styled-components';
 import { BrowserRouter as Router } from 'react-router-dom';
-import PageLayout from './components/PageLayout';
+import PageRoute from './components/pageRoute';
+import styled from 'styled-components';
 
 const App = () => {
   return (
     <Router>
       <Wrapper>
-        <PageLayout />
+        <PageRoute />
       </Wrapper>
     </Router>
   );

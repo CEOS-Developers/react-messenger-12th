@@ -1,11 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
-const FindForm = ({ holder }) => {
+const FindForm = ({ holder, onChangeName }) => {
+  const [inputContent, setInputContent] = useState('');
+
+  const onChangeContent = (e) => {
+    setInputContent(e.target.value);
+  };
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    if (inputContent === '') return;
+    setInputContent('');
+    onChangeName(inputContent);
+  };
+
   return (
-    <Wrapper>
+    <Wrapper onSubmit={onSubmit}>
       <FindFrame>
-        🔎<FindInput placeholder={holder}></FindInput>
+        🔎
+        <FindInput
+          value={inputContent}
+          placeholder={holder}
+          onChange={onChangeContent}
+        />
       </FindFrame>
     </Wrapper>
   );
