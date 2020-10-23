@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import ListName from './ListName';
 import FindForm from './FindForm';
 import FriendList from './FriendList';
-import MyList from './MyList';
+import ListFrame from './MyList';
 
 import { userInfo, MyInfo } from './UserInfo.js';
 
@@ -12,12 +12,13 @@ const UserPage = () => {
   return (
     <>
       <ListName name={'친구'} />
-      <FindForm />
-      <MyList
+      <FindForm holder={'이름 검색'} />
+      <ListFrame
         style={{ marginBottom: '5px' }}
         userName={MyInfo.name}
         userImage={MyInfo.image}
         statusMessage={MyInfo.statusMessage}
+        userMusic={MyInfo.music}
       />
       <DivisionLineBox>
         <DivisionLine />

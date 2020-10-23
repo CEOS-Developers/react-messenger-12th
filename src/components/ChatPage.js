@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 
 import ListName from './ListName';
 import FindForm from './FindForm';
@@ -11,7 +10,7 @@ const ChatPage = ({ handleisMenuBar, onChangeUserName, onChangeMessage }) => {
   return (
     <>
       <ListName name={'채팅'} />
-      <FindForm />
+      <FindForm holder={'채팅방 이름, 참여자 검색'} />
       {chatInfo.map((chat, index) => {
         return (
           <ChatList

@@ -12,47 +12,56 @@ export const MyInfo = {
   name: '지노',
   statusMessage: 'Beenzino',
   image: JINOIMAGE,
+  music: '오르막길 - 윤종신',
 };
 export const userInfo = [
   {
     name: '고애신',
     statusMessage: '독립을 위하여...',
     image: TAERIIMAGE,
+    music: '나랑아니면 - 검정치마',
   },
   {
     name: '구동매',
     statusMessage: '조센진들...',
     image: KOODONGMAEIMAGE,
+    music: '',
   },
   {
     name: '김희성',
     statusMessage: '날씨가 좋구려',
     image: HEESUNGIMAGE,
+    music: '당신과는 천천히 - 장범준',
   },
   {
     name: 'You Jin Choi',
     statusMessage: '러...브',
     image: YOUJINCHOIIMAGE,
+    music: 'legends never die - penta kill',
   },
   {
     name: '춘식',
     statusMessage: '아 심심해',
     image: CUNSIKIMAGE,
+    music: '',
   },
   {
     name: '츠다',
     statusMessage: '조센진!!!!!!!!!',
     image: CUDAIMAGE,
+    music: 'ニュミュージッ - ューミ',
   },
   {
     name: '쿠도히나',
     statusMessage: '하루 숙박비 30원 일주일 200원',
     image: KOODOIMAGE,
+    music: '',
   },
   {
     name: '행랑아범',
     statusMessage: '애기씨를 건드는 자는 뼈도 못추릴것이여',
     image: HANGIMAGE,
+    music: '',
   },
 ];
 

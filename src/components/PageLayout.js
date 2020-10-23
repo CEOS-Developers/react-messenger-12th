@@ -21,7 +21,6 @@ const PageLayout = () => {
 
   const onChangeMessage = (name) => {
     for (let i = 0; i < MESSAGE_LIST.length; i++) {
-      console.log(MESSAGE_LIST[i][0].opponentName);
       if (MESSAGE_LIST[i][0].opponentName === name) {
         setMessage(MESSAGE_LIST[i]);
       }

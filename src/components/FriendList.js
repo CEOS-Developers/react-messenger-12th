@@ -14,6 +14,7 @@ const FriendList = () => {
             userImage={user.image}
             userName={user.name}
             statusMessage={user.statusMessage}
+            userMusic={user.music}
           />
         );
       })}

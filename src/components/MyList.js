@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const ListFrame = ({ userImage, userName, statusMessage }) => {
+const ListFrame = ({ userImage, userName, statusMessage, userMusic }) => {
   return (
     <Wrapper>
       <ProfilePicture>
@@ -11,7 +11,13 @@ const ListFrame = ({ userImage, userName, statusMessage }) => {
         <UserName>{userName}</UserName>
         <UserStatusMessage>{statusMessage}</UserStatusMessage>
       </UserInfomationFrame>
-      <UserMusic>{userName}</UserMusic>
+      {userMusic ? (
+        <UserMusic>
+          <MusicName>{userMusic}</MusicName>
+        </UserMusic>
+      ) : (
+        <></>
+      )}
     </Wrapper>
   );
 };
@@ -43,7 +49,7 @@ const ProfileImage = styled.img`
 const UserInfomationFrame = styled.div`
   display: flex;
   justify-content: space-around;
-  width: 100%;
+  flex: 1 1 100%;
   flex-direction: column;
   margin-left: 12px;
   font-size: 12.5px;
@@ -59,12 +65,18 @@ const UserStatusMessage = styled.div`
 `;
 
 const UserMusic = styled.div`
+  display: flex;
+  flex: 0 0.3 200px;
+  flex-direction: row-reverse;
   padding-top: 20px;
   padding-right: 20px;
-  width: 100px;
-
   font-size: 10px;
   font-weight: 600;
-  text-align: right;
-  vertical-align: middle;
+`;
+
+const MusicName = styled.div`
+  border: 1.8px solid #75e674;
+  height: 14px;
+  padding: 2px 4px 2px 4px;
+  border-radius: 10px;
 `;
