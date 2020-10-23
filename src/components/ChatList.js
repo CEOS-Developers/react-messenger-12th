@@ -1,19 +1,39 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
-const ChatList = ({ userImage, userName, lastMessage, lastMessageTime }) => {
-  const onDoubleClick = () => {};
+const ChatList = ({
+  userImage,
+  userName,
+  lastMessage,
+  lastMessageTime,
+  handleisMenuBar,
+  onChangeUserName,
+  onChangeMessage,
+}) => {
+  const onClick = () => {
+    handleisMenuBar();
+    onChangeUserName(userName);
+    onChangeMessage(userName);
+  };
+
   return (
-    <Wrapper onDoubleClick={onDoubleClick}>
-      <ProfilePicture>
-        <ProfileImage src={userImage} />
-      </ProfilePicture>
-      <UserInfomationFrame>
-        <UserName>{userName}</UserName>
-        <UserStatusMessage>{lastMessage}</UserStatusMessage>
-      </UserInfomationFrame>
-      <LastTime>{lastMessageTime}</LastTime>
-    </Wrapper>
+    <Link
+      style={{ textDecoration: 'none' }}
+      to="/chatMessage"
+      onClick={onClick}
+    >
+      <Wrapper>
+        <ProfilePicture>
+          <ProfileImage src={userImage} />
+        </ProfilePicture>
+        <UserInfomationFrame>
+          <UserName>{userName}</UserName>
+          <UserStatusMessage>{lastMessage}</UserStatusMessage>
+        </UserInfomationFrame>
+        <LastTime>{lastMessageTime}</LastTime>
+      </Wrapper>
+    </Link>
   );
 };
 
@@ -24,6 +44,7 @@ const Wrapper = styled.div`
   padding: 5px;
   padding-left: 20px;
   height: 52px;
+  color: black;
   &:hover {
     background-color: #f7f6f6;
   }
@@ -60,8 +81,9 @@ const UserStatusMessage = styled.div`
 `;
 
 const LastTime = styled.div`
-  padding-right: 20px;
-  width: 30px;
+  display: flex;
+  flex: 0 0 50px;
+  padding-right: 12px;
   font-size: 10px;
   font-weight: 600;
   text-align: right;

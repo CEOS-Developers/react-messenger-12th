@@ -7,7 +7,7 @@ import ChatList from './ChatList';
 
 import { chatInfo } from './UserInfo';
 
-const ChatPage = () => {
+const ChatPage = ({ handleisMenuBar, onChangeUserName, onChangeMessage }) => {
   return (
     <>
       <ListName name={'채팅'} />
@@ -20,6 +20,9 @@ const ChatPage = () => {
             userImage={chat.image}
             lastMessage={chat.lastMessage}
             lastMessageTime={chat.lastMessageTime}
+            handleisMenuBar={handleisMenuBar}
+            onChangeUserName={onChangeUserName}
+            onChangeMessage={onChangeMessage}
           />
         );
       })}

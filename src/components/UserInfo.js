@@ -1,5 +1,5 @@
 import JINOIMAGE from '../images/JINOIMAGE.jpg';
-import MINHOONIMAGE from '../images/MINHOON.jpg';
+import HANGIMAGE from '../images/HANG.png';
 import TAERIIMAGE from '../images/TAERI.png';
 import YOUJINCHOIIMAGE from '../images/YOUJINCHOI.png';
 import KOODONGMAEIMAGE from '../images/KOODONGMAE.png';
@@ -50,41 +50,41 @@ export const userInfo = [
     image: KOODOIMAGE,
   },
   {
-    name: '민훈이형',
-    statusMessage: 'DB JAGU 해',
-    image: MINHOONIMAGE,
+    name: '행랑아범',
+    statusMessage: '애기씨를 건드는 자는 뼈도 못추릴것이여',
+    image: HANGIMAGE,
   },
 ];
 
 export const chatInfo = [
   {
     name: '고애신',
-    lastMessage: '독립은 언제할꺼요?',
+    lastMessage: '알겠소.. 빠른 시일 내에 계획을 세워 연락주시오',
     image: TAERIIMAGE,
-    lastMessageTime: '10:35',
+    lastMessageTime: '오전 10:35',
   },
   {
     name: '쿠도히나',
-    lastMessage: '숙박비 300원 밀리셨습니다. 이자는 달 10%입니다.',
+    lastMessage: '아닙니다. 혹여 더 질문할게 있으시면 물어보십시오.',
     image: KOODOIMAGE,
-    lastMessageTime: '10:35',
+    lastMessageTime: '오후 20:35',
   },
   {
     name: 'You Jin Choi',
     lastMessage: '오늘 밤 미국 공사관으로 오시오',
     image: YOUJINCHOIIMAGE,
-    lastMessageTime: '10:35',
+    lastMessageTime: '오전 11:45',
   },
   {
     name: '구동매',
-    lastMessage: '의병 그거 돈이 되는 거요?',
+    lastMessage: '의병 그거 돈이 되는 거요? 돈이 된다면 나도 하겠소',
     image: KOODONGMAEIMAGE,
-    lastMessageTime: '10:35',
+    lastMessageTime: '오후 11:11',
   },
   {
     name: '김희성',
     lastMessage: '약혼녀를 보러 가야해서 바쁘오',
     image: HEESUNGIMAGE,
-    lastMessageTime: '10:35',
+    lastMessageTime: '오후 08:30',
   },
 ];

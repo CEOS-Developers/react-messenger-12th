@@ -8,18 +8,16 @@ import THREEDOTSIMAGE from '../images/threedots.png';
 import SETTINGSIMAGE from '../images/settings.png';
 import ALARMIMAGE from '../images/alarm.png';
 
-const MenuBar = ({ handleisMenuBar }) => {
+const MenuBar = () => {
   return (
     <Wrapper>
       <MenuIcon IMAGE={PERSONIMAGE} link={'/'} />
       <MenuIcon IMAGE={CHATIMAGE} link={'/chat'} />
       <MenuIcon IMAGE={THREEDOTSIMAGE} link={'/more'} />
-      <MenuIcon
-        IMAGE={SETTINGSIMAGE}
-        link={'/chatMessage'}
-        handleisMenuBar={handleisMenuBar}
-      />
-      <MenuIcon IMAGE={ALARMIMAGE} link={'/'} />
+      <SettingList>
+        <MenuIcon IMAGE={ALARMIMAGE} />
+        <MenuIcon IMAGE={SETTINGSIMAGE} />
+      </SettingList>
     </Wrapper>
   );
 };
@@ -33,4 +31,10 @@ const Wrapper = styled.div`
   padding: 30px 15px 15px 15px;
   height: 100%;
   background-color: #e7e7e7;
+`;
+
+const SettingList = styled.div`
+  display: flex;
+  flex-direction: column-reverse;
+  height: 100%;
 `;
