@@ -1,5 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+
 import MenuIcon from './MenuIcon';
 
 import PERSONIMAGE from '../images/person.png';
@@ -11,9 +13,15 @@ import ALARMIMAGE from '../images/alarm.png';
 const MenuBar = () => {
   return (
     <Wrapper>
-      <MenuIcon IMAGE={PERSONIMAGE} link={'/'} />
-      <MenuIcon IMAGE={CHATIMAGE} link={'/chat'} />
-      <MenuIcon IMAGE={THREEDOTSIMAGE} link={'/more'} />
+      <Link to="/">
+        <MenuIcon IMAGE={PERSONIMAGE} />
+      </Link>
+      <Link to="/chat">
+        <MenuIcon IMAGE={CHATIMAGE} link={'/chat'} />
+      </Link>
+      <Link to="/more">
+        <MenuIcon IMAGE={THREEDOTSIMAGE} />
+      </Link>
       <SettingList>
         <MenuIcon IMAGE={ALARMIMAGE} />
         <MenuIcon IMAGE={SETTINGSIMAGE} />

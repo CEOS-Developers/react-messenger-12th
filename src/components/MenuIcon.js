@@ -1,15 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 
-const MenuIcon = ({ IMAGE, link, handleisMenuBar }) => {
+const MenuIcon = ({ IMAGE, handleisMenuBar }) => {
   return (
     <Wrapper>
-      <Link to={link} onClick={handleisMenuBar}>
-        <MenuButton>
-          <MenuImage src={IMAGE} />
-        </MenuButton>
-      </Link>
+      <MenuButton onClick={handleisMenuBar}>
+        <MenuImage src={IMAGE} />
+      </MenuButton>
     </Wrapper>
   );
 };
