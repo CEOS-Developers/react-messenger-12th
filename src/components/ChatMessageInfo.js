@@ -9,7 +9,7 @@ import JINOIMAGE from '../images/JINOIMAGE.jpg';
 import CUNSIKIMAGE from '../images/CUNSIK.png';
 
 export const JINO_MESSAGE = [
-  { opponent: JINOIMAGE, opponentName: '나' },
+  { opponent: JINOIMAGE, opponentName: '지노' },
   { user: false, content: '안녕하세요.' },
   { user: false, content: '프론트 엔드 3주차 미션 제출합니다.' },
   { user: false, content: '그냥 코딩하면 지루해서' },
