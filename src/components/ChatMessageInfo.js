@@ -9,14 +9,11 @@ import CUNSIKIMAGE from '../images/CUNSIK.png';
 
 export const JINO_MESSAGE = [
   { opponent: false, opponentName: '지노' },
-  { user: false, content: '바쁜 와중에 죄송하오' },
-  { user: false, content: '급한 일이 있어 그러는데...' },
-  { user: false, content: '어떤 일이오' },
-  { user: false, content: '설마 이번 저녁 약속 때문이오?' },
-  { user: false, content: '그렇소, 혹시 저녁 약속을 취소해도 되겠소?' },
-  { user: false, content: '무슨 일이시오?' },
-  { user: false, content: '급한 일이오?' },
-  { user: false, content: '약혼녀를 보러가야해서 바쁘오' },
+  { user: false, content: '안녕하세요.' },
+  { user: false, content: '프론트 엔드 3주차 미션 제출합니다.' },
+  { user: false, content: '그냥 코딩하면 지루해서' },
+  { user: false, content: '좋아하는 드라마를 토대로 메세지 넣어봤습니다.' },
+  { user: false, content: '힘드네요...' },
 ];
 
 export const TAERI_MESSAGE = [
