@@ -3,6 +3,21 @@ import YOUJINCHOIIMAGE from '../images/YOUJINCHOI.png';
 import KOODONGMAEIMAGE from '../images/KOODONGMAE.png';
 import HEESUNGIMAGE from '../images/HEESUNG.png';
 import KOODOIMAGE from '../images/KOODO.png';
+import CUDAIMAGE from '../images/CUDA.png';
+import HANGIMAGE from '../images/HANG.png';
+import CUNSIKIMAGE from '../images/CUNSIK.png';
+
+export const JINO_MESSAGE = [
+  { opponent: false, opponentName: '지노' },
+  { user: false, content: '바쁜 와중에 죄송하오' },
+  { user: false, content: '급한 일이 있어 그러는데...' },
+  { user: false, content: '어떤 일이오' },
+  { user: false, content: '설마 이번 저녁 약속 때문이오?' },
+  { user: false, content: '그렇소, 혹시 저녁 약속을 취소해도 되겠소?' },
+  { user: false, content: '무슨 일이시오?' },
+  { user: false, content: '급한 일이오?' },
+  { user: false, content: '약혼녀를 보러가야해서 바쁘오' },
+];
 
 export const TAERI_MESSAGE = [
   { opponent: TAERIIMAGE, opponentName: '고애신' },
@@ -92,6 +107,20 @@ export const KOODONGMAE_MESSAGE = [
   },
 ];
 
+export const CUDA_MESSAGE = [
+  { opponent: CUDAIMAGE, opponentName: '츠다' },
+  {
+    user: CUDAIMAGE,
+    content: '총격사건의 진위를 조사하려고 하니 동행해줘야겠소.',
+  },
+  { user: false, content: '무슨일이오?? 난 관련없소.' },
+  { user: CUDAIMAGE, content: '일단 따라오시오 심문을 좀 할거이니' },
+  { user: false, content: '어허... 참 어이가 없구려' },
+  { user: CUDAIMAGE, content: '조센진들은 협조를 잘 안하구려' },
+  { user: false, content: '무슨 막말이오!!' },
+  { user: false, content: '내 가만 안두리다....' },
+];
+
 export const HEESUNG_MESSAGE = [
   { opponent: HEESUNGIMAGE, opponentName: '김희성' },
   { user: HEESUNGIMAGE, content: '바쁜 와중에 죄송하오' },
@@ -104,10 +133,42 @@ export const HEESUNG_MESSAGE = [
   { user: HEESUNGIMAGE, content: '약혼녀를 보러가야해서 바쁘오' },
 ];
 
+export const HANG_MESSAGE = [
+  { opponent: HANGIMAGE, opponentName: '행랑아범' },
+  { user: HANGIMAGE, content: '왜 자꾸 애기씨 집 주변을 기웃거리시오?' },
+  { user: HANGIMAGE, content: '한 번만더 기웃거리면 가만 안두겠소!!' },
+  { user: false, content: '오해하지 마시오.. 애기씨의 안전을 위해서요.' },
+  {
+    user: false,
+    content: '최근 의병에 관해 일본 측에서 은밀 조사를 하고있소.',
+  },
+  { user: HANGIMAGE, content: '아 미안하오. 그런 줄은 몰랐소' },
+  { user: false, content: '애기씨껜 말씀드리지 마시오' },
+  { user: false, content: '내가 처리하겠소' },
+  { user: HANGIMAGE, content: '알겠소 감사하오.' },
+];
+
+export const CUNSIK_MESSAGE = [
+  { opponent: CUNSIKIMAGE, opponentName: '춘식' },
+  { user: CUNSIKIMAGE, content: '총격사건의 범인의 행방을 찾았소' },
+  { user: CUNSIKIMAGE, content: '근처 산에서 총소리가 울렸소.' },
+  { user: false, content: '근처 산 어디쯤이오??' },
+  {
+    user: false,
+    content: '거기 숨어 있을 줄은 몰랐는데,,',
+  },
+  { user: CUNSIKIMAGE, content: '이 근방이오 오면 바로 안내하겠소' },
+  { user: false, content: '정말 고맙소 은혜 꼭 보답하겠소' },
+];
+
 export const MESSAGE_LIST = [
+  JINO_MESSAGE,
   TAERI_MESSAGE,
   KOODO_MESSAGE,
   YOUJINCHOI_MESSAGE,
   KOODONGMAE_MESSAGE,
+  CUDA_MESSAGE,
   HEESUNG_MESSAGE,
+  HANG_MESSAGE,
+  CUNSIK_MESSAGE,
 ];

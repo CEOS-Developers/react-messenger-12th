@@ -13,14 +13,13 @@ const PageLayout = ({ onChangeMessage }) => {
       <MenuBar />
       <AllList>
         <Switch>
-          <Route exact path="/" component={UserPage} />
+          <Route exact path="/">
+            <UserPage onChangeMessage={onChangeMessage} />
+          </Route>
           <Route path="/chat">
             <ChatPage onChangeMessage={onChangeMessage} />
           </Route>
           <Route path="/more" component={MorePage} />
-          {/* <Route path="/chatMessage">
-            <ChattingScreen WHO_MESSAGE={message} />
-          </Route> */}
         </Switch>
       </AllList>
     </Wrapper>
@@ -36,6 +35,7 @@ const Wrapper = styled.div`
 
 const AllList = styled.div`
   width: 100%;
+  margin-left: 50px;
   padding-top: 30px;
 `;
 

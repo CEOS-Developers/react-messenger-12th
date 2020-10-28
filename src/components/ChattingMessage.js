@@ -6,14 +6,12 @@ const ChattingMessage = ({ messageContent, messageSender }) => {
   // 정쿨님이라면 style에 row-reverse를 준다.
   return (
     <>
-      {
-        <Wrapper messageSender={messageSender}>
-          <UserProfile>
-            <UserImage src={messageSender ? messageSender : JINOIMAGE} />
-          </UserProfile>
-          <UserContent>{messageContent}</UserContent>
-        </Wrapper>
-      }
+      <Wrapper messageSender={messageSender}>
+        <UserProfile>
+          <UserImage src={messageSender ? messageSender : JINOIMAGE} />
+        </UserProfile>
+        <UserContent>{messageContent}</UserContent>
+      </Wrapper>
     </>
   );
 };
@@ -24,6 +22,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: ${(props) => (props.messageSender ? 'row' : 'row-reverse')};
   align-items: center;
+  background-color: #abc1d1;
   height: 70px;
 `;
 

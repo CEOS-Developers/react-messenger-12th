@@ -12,9 +12,105 @@ export const MyInfo = {
   name: '지노',
   statusMessage: 'Beenzino',
   image: JINOIMAGE,
-  music: '오르막길 - 윤종신',
+  music: 'LOVE YA! - 혁오(HYUKOH)',
 };
 export const userInfo = [
+  {
+    name: '고애신',
+    statusMessage: '독립을 위하여...',
+    image: TAERIIMAGE,
+    music: '나랑아니면 - 검정치마',
+  },
+  {
+    name: '구동매',
+    statusMessage: '조센진들...',
+    image: KOODONGMAEIMAGE,
+    music: '',
+  },
+  {
+    name: '김희성',
+    statusMessage: '날씨가 좋구려',
+    image: HEESUNGIMAGE,
+    music: '당신과는 천천히 - 장범준',
+  },
+  {
+    name: 'You Jin Choi',
+    statusMessage: '러...브',
+    image: YOUJINCHOIIMAGE,
+    music: 'legends never die - penta kill',
+  },
+  {
+    name: '춘식',
+    statusMessage: '아 심심해',
+    image: CUNSIKIMAGE,
+    music: '',
+  },
+  {
+    name: '츠다',
+    statusMessage: '조센진!!!!!!!!!',
+    image: CUDAIMAGE,
+    music: 'ニュミュージッ - ューミ',
+  },
+  {
+    name: '쿠도히나',
+    statusMessage: '하루 숙박비 30원 일주일 200원',
+    image: KOODOIMAGE,
+    music: '',
+  },
+  {
+    name: '행랑아범',
+    statusMessage: '애기씨를 건드는 자는 뼈도 못추릴것이여',
+    image: HANGIMAGE,
+    music: '',
+  },
+  {
+    name: '고애신',
+    statusMessage: '독립을 위하여...',
+    image: TAERIIMAGE,
+    music: '나랑아니면 - 검정치마',
+  },
+  {
+    name: '구동매',
+    statusMessage: '조센진들...',
+    image: KOODONGMAEIMAGE,
+    music: '',
+  },
+  {
+    name: '김희성',
+    statusMessage: '날씨가 좋구려',
+    image: HEESUNGIMAGE,
+    music: '당신과는 천천히 - 장범준',
+  },
+  {
+    name: 'You Jin Choi',
+    statusMessage: '러...브',
+    image: YOUJINCHOIIMAGE,
+    music: 'legends never die - penta kill',
+  },
+  {
+    name: '춘식',
+    statusMessage: '아 심심해',
+    image: CUNSIKIMAGE,
+    music: '',
+  },
+  {
+    name: '츠다',
+    statusMessage: '조센진!!!!!!!!!',
+    image: CUDAIMAGE,
+    music: 'ニュミュージッ - ューミ',
+  },
+  {
+    name: '쿠도히나',
+    statusMessage: '하루 숙박비 30원 일주일 200원',
+    image: KOODOIMAGE,
+    music: '',
+  },
+  {
+    name: '행랑아범',
+    statusMessage: '애기씨를 건드는 자는 뼈도 못추릴것이여',
+    image: HANGIMAGE,
+    music: '',
+  },
   {
     name: '고애신',
     statusMessage: '독립을 위하여...',
@@ -67,6 +163,12 @@ export const userInfo = [
 
 export const chatInfo = [
   {
+    name: '지노',
+    lastMessage: '히히',
+    image: JINOIMAGE,
+    lastMessageTime: '오전 04:02',
+  },
+  {
     name: '고애신',
     lastMessage: '알겠소.. 빠른 시일 내에 계획을 세워 연락주시오',
     image: TAERIIMAGE,
@@ -95,5 +197,24 @@ export const chatInfo = [
     lastMessage: '약혼녀를 보러 가야해서 바쁘오',
     image: HEESUNGIMAGE,
     lastMessageTime: '오후 08:30',
+  },
+  {
+    name: '츠다',
+    lastMessage: '조센진들 다 죽인다!!',
+    image: CUDAIMAGE,
+    lastMessageTime: '오전 08:10',
+  },
+  {
+    name: '행랑아범',
+    lastMessage: '알겠소 감사하오.',
+    image: HANGIMAGE,
+    lastMessageTime: '오전 07:12',
+  },
+
+  {
+    name: '춘식',
+    lastMessage: '정말 고맙소 은혜 꼭 보답하겠소.',
+    image: CUNSIKIMAGE,
+    lastMessageTime: '오전 03:53',
   },
 ];

@@ -22,6 +22,7 @@ const ChattingScreen = ({ WHO_MESSAGE }) => {
 
   const handleMessageList = (newMessage) => {
     setMessageList([...messageList, newMessage]);
+    console.log(messageList[0].opponent);
   };
 
   return (
@@ -42,6 +43,7 @@ const ChattingScreen = ({ WHO_MESSAGE }) => {
       })}
       <MessageSender
         status={userStatus}
+        opponent={messageList[0].opponent}
         handleMessageList={handleMessageList}
       ></MessageSender>
       <BottomSpace />
@@ -52,7 +54,7 @@ const ChattingScreen = ({ WHO_MESSAGE }) => {
 export default ChattingScreen;
 
 const Screen = styled.div`
-  height: 100vh;
+  height: 100%;
   padding-top: 80px;
   background-color: #abc1d1;
 `;

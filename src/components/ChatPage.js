@@ -10,7 +10,7 @@ const ChatPage = ({ onChangeMessage }) => {
   const [chatInformation, setUserInfomation] = useState(chatInfo);
   const onChangeName = (n) => {
     const list = chatInfo.filter((chat) => {
-      return chat.name === n;
+      return chat.name.indexOf(n) == 0 ? true : false;
     });
     setUserInfomation(list);
   };

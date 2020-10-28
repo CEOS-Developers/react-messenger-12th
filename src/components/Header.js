@@ -5,13 +5,11 @@ const Header = ({ userImage, toggleUser, userName }) => {
   const [now] = useState('현재 활동중');
 
   // status 상태에 따라 프로필 사진이 바뀜
-
   return (
     <Wrapper>
       <UserProfile onClick={toggleUser}>
         <UserImage src={userImage}></UserImage>
       </UserProfile>
-
       <UserInformation>
         <UserName>{userName}</UserName>
         <div>{now}</div>

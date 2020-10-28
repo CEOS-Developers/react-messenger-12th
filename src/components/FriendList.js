@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import MyList from './MyList';
 
-const FriendList = ({ userInfo }) => {
+const FriendList = ({ userInfo, onChangeMessage }) => {
   return (
     <Wrapper>
       {userInfo.map((user, index) => {
@@ -14,6 +14,7 @@ const FriendList = ({ userInfo }) => {
             userName={user.name}
             statusMessage={user.statusMessage}
             userMusic={user.music}
+            onChangeMessage={onChangeMessage}
           />
         );
       })}

@@ -38,11 +38,14 @@ const Wrapper = styled.div`
   flex-direction: column;
   padding: 30px 15px 15px 15px;
   height: 100%;
+  width: 30px;
   background-color: #e7e7e7;
+  position: fixed;
 `;
 
 const SettingList = styled.div`
   display: flex;
   flex-direction: column-reverse;
+  margin-bottom: 30px;
   height: 100%;
 `;

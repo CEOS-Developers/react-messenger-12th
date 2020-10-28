@@ -8,11 +8,11 @@ import ListFrame from './MyList';
 
 import { userInfo, MyInfo } from './UserInfo.js';
 
-const UserPage = () => {
+const UserPage = ({ onChangeMessage }) => {
   const [userInformation, setUserInformation] = useState(userInfo);
   const onChangeName = (n) => {
     const list = userInfo.filter((user) => {
-      return user.name === n;
+      return user.name.indexOf(n) == 0 ? true : false;
     });
     setUserInformation(list);
   };
@@ -27,12 +27,16 @@ const UserPage = () => {
         userImage={MyInfo.image}
         statusMessage={MyInfo.statusMessage}
         userMusic={MyInfo.music}
+        onChangeMessage={onChangeMessage}
       />
       <DivisionLineBox>
         <DivisionLine />
       </DivisionLineBox>
       <FriendListName>친구 {userInfo.length}</FriendListName>
-      <FriendList userInfo={userInformation} />
+      <FriendList
+        userInfo={userInformation}
+        onChangeMessage={onChangeMessage}
+      />
     </>
   );
 };

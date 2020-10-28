@@ -1,24 +1,41 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
-const ListFrame = ({ userImage, userName, statusMessage, userMusic }) => {
+const ListFrame = ({
+  userImage,
+  userName,
+  statusMessage,
+  userMusic,
+  onChangeMessage,
+}) => {
+  const onClick = () => {
+    onChangeMessage(userName);
+  };
+
   return (
-    <Wrapper>
-      <ProfilePicture>
-        <ProfileImage src={userImage} />
-      </ProfilePicture>
-      <UserInfomationFrame>
-        <UserName>{userName}</UserName>
-        <UserStatusMessage>{statusMessage}</UserStatusMessage>
-      </UserInfomationFrame>
-      {userMusic ? (
-        <UserMusic>
-          <MusicName>{userMusic}</MusicName>
-        </UserMusic>
-      ) : (
-        <></>
-      )}
-    </Wrapper>
+    <Link
+      style={{ textDecoration: 'none', cursor: 'default' }}
+      to={`/message/${userName}`}
+      onClick={onClick}
+    >
+      <Wrapper>
+        <ProfilePicture>
+          <ProfileImage src={userImage} />
+        </ProfilePicture>
+        <UserInfomationFrame>
+          <UserName>{userName}</UserName>
+          <UserStatusMessage>{statusMessage}</UserStatusMessage>
+        </UserInfomationFrame>
+        {userMusic ? (
+          <UserMusic>
+            <MusicName>{userMusic}</MusicName>
+          </UserMusic>
+        ) : (
+          <></>
+        )}
+      </Wrapper>
+    </Link>
   );
 };
 
@@ -29,6 +46,7 @@ const Wrapper = styled.div`
   padding: 5px;
   padding-left: 20px;
   height: 55px;
+  color: black;
   &:hover {
     background-color: #f7f6f6;
   }
@@ -70,13 +88,14 @@ const UserMusic = styled.div`
   flex-direction: row-reverse;
   padding-top: 20px;
   padding-right: 20px;
+  color: #515050;
   font-size: 10px;
-  font-weight: 600;
+  font-weight: 400;
 `;
 
 const MusicName = styled.div`
   border: 1.8px solid #75e674;
   height: 14px;
-  padding: 2px 4px 2px 4px;
+  padding: 2px 6px 2px 6px;
   border-radius: 10px;
 `;

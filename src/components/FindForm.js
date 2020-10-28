@@ -6,6 +6,7 @@ const FindForm = ({ holder, onChangeName }) => {
 
   const onChangeContent = (e) => {
     setInputContent(e.target.value);
+    onChangeName(e.target.value);
   };
 
   const onSubmit = (e) => {
