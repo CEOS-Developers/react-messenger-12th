@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import PageRoute from './components/PageRoute';
+import PageRoute from './components/PageRoute.js';
 import styled from 'styled-components';
 
 const App = () => {
