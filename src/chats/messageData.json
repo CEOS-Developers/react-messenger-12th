@@ -1,0 +1,33 @@
+{
+  "siwon":[
+
+    { "user": true, "content": "안녕하세요 12기 프론트엔드 개발자분들" },
+    { "user": true, "content": "저희의 대화를 마음껏 조작해보세요 💌" },
+    { "user": true, "content": "상단에 프로필을 눌러서 발신자 변경하면 됩니당~" },
+    { "user": false, "content":  "안녕 은아" },
+    { "user": true, "content":  "시원아 넌 최고의 팀장이야" },
+    { "user": false, "content": "나도 아니까"   },
+    { "user": false, "content": "그만 말해줘도 돼" },
+    { "user": true, "content": "ㅠㅠ" }
+  ],
+  "nayubin":[
+    { "user": true, "content": "hey wassup You goin to party tonight?" },
+    { "user": false, "content": "I wanna go, but nah" },
+    { "user": true, "content":  "Why? I heard they prepared a lot. It must be cool" },
+    { "user": false, "content":  "My professor just uploaded a new assignment,and the due is tomorrow" },
+    { "user": true, "content": "yuck" }
+
+  ],
+  "dayubin":[
+    { "user": true, "content": "I want to go Macau" },
+    { "user": true, "content": "for real" },
+    { "user": true, "content": "I miss the scent of Macau" },
+    { "user": false, "content":  "You are always in love with Macau" },
+    { "user": true, "content":  "Yeah and Milan too" },
+    { "user": false, "content": "Does Macau accept Koreans?"   },
+    { "user": false, "content": "Maybe you can go if you endure quarantine for 2 weeks" },
+    { "user": true, "content": "ㅠㅠ" }
+
+  ]
+  }
+
