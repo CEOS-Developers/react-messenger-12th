@@ -35,6 +35,8 @@ export default function App() {
         <Switch>
           <MainScreen>
             <Route path="/chatting-room-list" component={ChattingRoomList} />
+            <Route path="/chatting-screen" component={ChattingScreen} />
+            <Route exact path="/" component={ChattingRoomList} />
           </MainScreen>
         </Switch>
         </RigthSideContainer>
@@ -54,7 +56,7 @@ const Container = styled.div`
 
   display: flex;
   align-items: center;
-  justify-content: center;
+  ${'' /* justify-content: center; */}
 
   background: grey;
 `
@@ -91,7 +93,7 @@ const AppController = styled.div`
   background: #5472d3;
 `
 const MainScreen = styled.div`
-  height: 100%;
+  height: 95%;
   width: 100%;
   display: flex;
 `
