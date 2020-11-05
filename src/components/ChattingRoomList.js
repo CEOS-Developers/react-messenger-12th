@@ -5,12 +5,16 @@ import ChattingRoom from './ChattingRoom';
 export default function ChattingRoomList() {
     return (
         <Wrapper>
-            <ChattingRoom>
-            </ChattingRoom>
-            <ChattingRoom>
-            </ChattingRoom>
-            <ChattingRoom>
-            </ChattingRoom>
+            <ChattingRoom />
+            <ChattingRoom />
+            <ChattingRoom />
+            <ChattingRoom />
+            <ChattingRoom />
+            <ChattingRoom />
+            <ChattingRoom />
+            <ChattingRoom />
+            <ChattingRoom />
+            <ChattingRoom />
         </Wrapper>
     )
 }

@@ -14,7 +14,7 @@ import {
 export default function App() {
   return (
     <Container>
-      <AppScreen>
+      {/* <AppScreen> */}
         <Router>
         <Sidebar>
           <i class="fas fa-user"></i>
@@ -30,18 +30,24 @@ export default function App() {
           </ServeIcon>
         </Sidebar>
 
-        <RigthSideContainer>
-        <AppController />
-        <Switch>
-          <MainScreen>
-            <Route path="/chatting-room-list" component={ChattingRoomList} />
+        <ChattingRoomListContainer>
+          <AppController />
+          <Switch>
+            <MainScreen>
+              <Route path="/chatting-room-list" component={ChattingRoomList} />
+              <Route path="/chatting-screen" component={ChattingRoomList} />
+              <Route exact path="/" component={ChattingRoomList} />
+            </MainScreen>
+          </Switch>
+        </ChattingRoomListContainer>
+          <Switch>
             <Route path="/chatting-screen" component={ChattingScreen} />
-            <Route exact path="/" component={ChattingRoomList} />
-          </MainScreen>
-        </Switch>
-        </RigthSideContainer>
+          </Switch>
+        <ChattingScreenContainer>
+          
+        </ChattingScreenContainer>
         </Router>
-      </AppScreen>
+      {/* </AppScreen> */}
     </Container>
 
     // <Wrapper>
@@ -68,7 +74,7 @@ const AppScreen = styled.div`
 `
 
 const Sidebar = styled.div`
-    width: 20%;
+    width: 7%;
     height: 100%;
     background: #002171;
     
@@ -97,10 +103,15 @@ const MainScreen = styled.div`
   width: 100%;
   display: flex;
 `
-const RigthSideContainer = styled.div`
+const ChattingRoomListContainer = styled.div`
   height: 100%;
-  width: 100%;
+  width: 35%;
   flex-direction: column;
+`
+
+const ChattingScreenContainer = styled.div`
+  height: 100%
+  width: 50%;
 `
 
 const Wrapper = styled.div`
