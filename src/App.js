@@ -1,19 +1,24 @@
-import React from 'react';
-import styled from 'styled-components';
-
-import ChattingScreen from './components/ChattingScreen';
+import React from "react";
+import styled from "styled-components";
+import Sidebar from "./components/Sidebar";
+import ChattingScreen from "./components/ChattingScreen";
+import { BrowserRouter, Route } from "react-router-dom";
 
 export default function App() {
-	return (
-		<Wrapper>
-			<ChattingScreen></ChattingScreen>
-		</Wrapper>
-	);
+  return (
+    <BrowserRouter>
+      <Sidebar />
+      <Wrapper>
+        <Route path="/chat" exact={true} component={ChattingScreen} />
+      </Wrapper>
+    </BrowserRouter>
+  );
 }
 
 const Wrapper = styled.div`
-	height: 100vh;
-	& * {
-		font-family: sans-serif;
-	}
+  height: 100vh;
+  margin-left: 90px;
+  & * {
+    font-family: sans-serif;
+  }
 `;

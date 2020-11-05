@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { images } from "./images/image";
-import Header from "./Header";
 import MessageSender from "./MessageSender";
-
-export default function ChattingScreen() {
+import { withRouter } from "react-router-dom";
+const ChattingScreen = () => {
   const MSGLIST = [
     { user: true, content: "안녕하세요 12기 프론트엔드 개발자분들" },
     { user: true, content: "저희의 대화를 마음껏 조작해보세요 💌" },
@@ -50,15 +49,15 @@ export default function ChattingScreen() {
   };
 
   return (
-    <>
+    <Wrapper>
       {/* child component updates state in parent component   */}
       {/* <Header user={user} onClick={() => setUser(!user)}></Header> */}
 
-      <Header
+      {/* <Header
         user={user ? "고은" : "정쿨"}
         onClick={() => setUser(!user)}
         imgUrl={user ? images.EUNKO : images.COOL}
-      ></Header>
+      ></Header> */}
       <Chat>
         {/* give <li> structure to each message */}
         {messageList.map((message, index) => {
@@ -71,20 +70,27 @@ export default function ChattingScreen() {
         })}
         {/* <MessageSender {...messageList}></MessageSender> */}
       </Chat>
-
+      <Empty />
       <MessageSender
         {...{ inputText }}
         {...{ handleInput }}
         {...{ handleSubmit }}
       ></MessageSender>
-    </>
+    </Wrapper>
   );
-}
+};
+
+const Wrapper = styled.div`
+  background-color: #abc1d1;
+`;
+const Empty = styled.div`
+  height: 110px;
+`;
 
 const Chat = styled.div`
-  background-color: #abc1d1;
+  /* background-color: #abc1d1; */
   padding-top: 120px;
-  padding-bottom: 60px;
+  /* padding-bottom: 200px; */
 `;
 
 const MessageRow = styled.li`
@@ -117,3 +123,5 @@ const Img = styled.img`
   margin: 10px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
 `;
+
+export default withRouter(ChattingScreen);
