@@ -11,12 +11,12 @@ export default function ChattingRoom({ userNum }) {
   return (
     <Wrapper>
       <ChatterProfile src={eunProfile} />
-      <Link to="chatting-screen">
+      <ChattingLink to="chatting-screen">
         <ChattingInfo>
           <ChatterName>{nameArr[userNum]}</ChatterName>
           <ChattingPreview>{chattingPreviewArr[0]}</ChattingPreview>
         </ChattingInfo>
-      </Link>
+      </ChattingLink>
     </Wrapper>
   );
 }
@@ -32,12 +32,15 @@ const Wrapper = styled.div`
 
 const ChatterProfile = styled.img`
   height: 80%;
-  width: 14%;
+  width: 50px;
+  margin: 0 10px 0 15px;
   border-radius: 50%;
   align-self: center;
 `;
 
 const ChattingInfo = styled.div`
+  height: 80%;
+  margin-top: 5px;
   display: flex;
   flex-direction: column;
 `;
@@ -45,10 +48,15 @@ const ChattingInfo = styled.div`
 const ChatterName = styled.div`
   margin-top: 10px;
   font-size: 13px;
-  text-decoration: none;
+  font-weight: bold;
+  color: black;
 `;
 
 const ChattingPreview = styled.div`
-  font-size: 11px;
-  text-decoration: none;
+  font-size: 12px;
+  color: #a4a4a4;
 `;
+
+const ChattingLink = styled(Link)`
+  text-decoration: none;
+`

@@ -47,7 +47,7 @@ const SearchBar = styled.input`
   height: 50px;
   width: 90%;
 
-  margin: 0px 0px 10px 15px;
+  margin: 0px 0px 3px 15px;
   border: none;
   border-radius: 5px 5px 5px 5px;
   background: #eeeeee;
