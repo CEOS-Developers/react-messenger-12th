@@ -1,0 +1,139 @@
+{
+    "arrMessage": [{
+            "user": true,
+            "content": "안녕하세요 12기 프론트엔드 개발자분들"
+        },
+        {
+            "user": true,
+            "content": "여러분께 소개드리고 싶은 사람이 있어요~"
+        },
+        {
+            "user": true,
+            "content": "바로 12기의 장창훈 이라고 하시는 분입니다 !!!"
+        },
+        {
+            "user": false,
+            "content": "안녕 은아"
+        },
+        {
+            "user": false,
+            "content": "뭐해 ?"
+        },
+        {
+            "user": true,
+            "content": "지금 장창훈님을 소개하고있어"
+        },
+        {
+            "user": false,
+            "content": "나도 아니까  "
+        },
+        {
+            "user": false,
+            "content": "그만 말해줘도 돼"
+        },
+        {
+            "user": true,
+            "content": "ㅠㅠ..."
+        }
+    ],
+
+    "chatPreviewArr": [{
+            "name": "둘리",
+            "chattingPreview": "처신 잘하라고 ^^",
+            "profile": "https://lh3.googleusercontent.com/proxy/cQhfhhHnAxTAqHOnZRQTf2IcxTG0vWbe-Yb0UEzrO6DUsQmfTBML9NY3PPgr6EEk-pnZl_pfly2c6pNSN082ChviRsD1gya-j-wr1A7RYzlAtLolyw31dwVNB6gL4z9m"
+        },
+        {
+            "name": "도우너",
+            "chattingPreview": "베오스 어서오고",
+            "profile": "https://lh3.googleusercontent.com/proxy/vE8EKLuVLOuGmYNV2gKrHLnE5aQfvA9_OUNPofUUq-a3wTJn2-s-SVD7_Ayeqpc9WI78XRdxyWz-WFVF7yOU_gfgMVFqPQri3IFnvK9E2y5H1fyoidtHmST1IeM5kJ234RVH0chVtijdXWXwyaJtwwgY5rUkMZDGlnARm77OpQ1y7OJQWi2RyzFJMZ1azw"
+        },
+        {
+            "name": "또치",
+            "chattingPreview": "또치가 둘리를 또 치면...?",
+            "profile": "https://pbs.twimg.com/profile_images/1012380987307638784/Pb0YFUxQ_400x400.jpg"
+        },
+        {
+            "name": "고길동",
+            "chattingPreview": "검성 고길동으로 돌아갈때다..",
+            "profile": "https://inthestatus.com/jkwp/wp-content/uploads/2020/04/%EA%B3%A0%EA%B8%B8%EB%8F%99_6120200415092553.jpg"
+        },
+        {
+            "name": "박희동",
+            "chattingPreview": "움파파 !!",
+            "profile": "https://pbs.twimg.com/media/DY5itUkV4AA1FDY.jpg"
+        },
+        {
+            "name": "마이콜",
+            "chattingPreview": "둘리야 뭐해?",
+            "profile": "https://lh3.googleusercontent.com/proxy/ofMuqUD92fDJ-YquxfRDYHhigBZbpKemZMIkIkZNrlDQksVpTsn5XGdzHmQRm1bbhfORxlohHgTuWkDuk6OtQli0WXfAEgq3YKstfdIU-oINOgZbo9xGEUECisOOETCgMWhtk1hyW5mFF_31mWoNyxUylvnMrkH2WDe4qDvERJMaeaSeQFaYoizU2yJdG0NQTgHrTfLifExtmp4092o"
+        },
+        {
+            "name": "둘리 친구1",
+            "chattingPreview": "오늘 저녁 술 ㄱㄱ?",
+            "profile": "https://i.pinimg.com/564x/ae/36/07/ae3607588f985d109458c976a6e68224.jpg"
+        },
+        {
+            "name": "둘리 친구2",
+            "chattingPreview": "티라노가 가장 쎄",
+            "profile": "https://image2.lotteimall.com/goods/19/90/21/1253219019_L.jpg"
+        },
+        {
+            "name": "둘리 친구3",
+            "chattingPreview": "트리케라~톱스",
+            "profile": "https://nopeoplestime.files.wordpress.com/2015/09/20150708-wendiceratops.png?w=584"
+        },
+        {
+            "name": "둘리 친구4",
+            "chattingPreview": "코뿔소다",
+            "profile": "https://e1.pngegg.com/pngimages/197/402/png-clipart-rhino-triceratops-artwork.png"
+        },
+        {
+            "name": "둘리 친구5",
+            "chattingPreview": "티라노가 가장 쎄",
+            "profile": "https://image2.lotteimall.com/goods/19/90/21/1253219019_L.jpg"
+        },
+        {
+            "name": "둘리 친구6",
+            "chattingPreview": "코뿔소다",
+            "profile": "https://e1.pngegg.com/pngimages/197/402/png-clipart-rhino-triceratops-artwork.png"
+        },
+        {
+            "name": "둘리 친구7",
+            "chattingPreview": "오늘 저녁 술 ㄱㄱ?",
+            "profile": "https://i.pinimg.com/564x/ae/36/07/ae3607588f985d109458c976a6e68224.jpg"
+        }
+    ],
+    "groupChatProfile": [
+        "https://i.pinimg.com/564x/ae/36/07/ae3607588f985d109458c976a6e68224.jpg",
+        "https://image2.lotteimall.com/goods/19/90/21/1253219019_L.jpg",
+        "https://nopeoplestime.files.wordpress.com/2015/09/20150708-wendiceratops.png?w=584",
+        "https://image2.lotteimall.com/goods/19/90/21/1253219019_L.jpg",
+        "https://i.pinimg.com/564x/ae/36/07/ae3607588f985d109458c976a6e68224.jpg",
+        "https://i.pinimg.com/564x/ae/36/07/ae3607588f985d109458c976a6e68224.jpg",
+        "https://nopeoplestime.files.wordpress.com/2015/09/20150708-wendiceratops.png?w=584",
+        "https://image2.lotteimall.com/goods/19/90/21/1253219019_L.jpg",
+        "https://image2.lotteimall.com/goods/19/90/21/1253219019_L.jpg",
+        "https://i.pinimg.com/564x/ae/36/07/ae3607588f985d109458c976a6e68224.jpg",
+        "https://nopeoplestime.files.wordpress.com/2015/09/20150708-wendiceratops.png?w=584",
+        "https://image2.lotteimall.com/goods/19/90/21/1253219019_L.jpg",
+        "https://nopeoplestime.files.wordpress.com/2015/09/20150708-wendiceratops.png?w=584",
+        "https://image2.lotteimall.com/goods/19/90/21/1253219019_L.jpg"
+    ],
+    "groupNameArr": [
+        "그룹채팅1 (6)",
+        "그룹채팅3 (13)",
+        "그룹채팅7 (200)",
+        "그룹채팅6 (10)",
+        "그룹채팅2 (2)",
+        "그룹채팅9 (2)",
+        "그룹채팅4 (7)",
+        "그룹채팅5 (4)",
+        "그룹채팅8 (6)",
+        "그룹채팅10 (23)"
+    ],
+    "me": {
+        "name": "장창훈",
+        "chatPreview": "頑張りましょう！",
+        "profile": "https://lh3.googleusercontent.com/proxy/FYROMn4Rch3G-5lsYUDviVBf-9rWq4EFtMlKs29yUDxKaNYXAxTlVnjJrLAOrRGXlhl_G2ZFViqIPCuxzy3ySbpgOA3e3xbVpaGTHjdUIZZ81pPyqlU7pfPHjoII0XgoBrOTp1-aD9-qr2DTHuFQVK7UGT8aLJRu_1gflfl5how"
+    }
+}

@@ -27,9 +27,9 @@ export default function MessageSender({ addMessageToArr }) {
 
 const Wrapper = styled.form`
   height: 70px;
-  left: 0px;
+  ${'' /* left: 0px; */}
   bottom: 0px;
-  width: 100vw;
+  width: 100%;
   position: fixed;
 
   background-color: white;
@@ -38,12 +38,13 @@ const Wrapper = styled.form`
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
 
   display: flex;
-  justify-content: center;
+  ${'' /* justify-content: center; */}
   align-items: center;
 `;
 
 const ChatBox = styled.input`
-  width: 1150px;
+  ${'' /* width: 1150px; */}
+  width: 60%;
   height: 60%;
   padding-left: 12px;
   border-radius: 20px 20px 20px 20px;
