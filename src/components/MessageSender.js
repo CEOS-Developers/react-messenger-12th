@@ -15,14 +15,15 @@ export default function MessageSender({
 }
 
 const InputBox = styled.form`
-  height: 60px;
+  background-color: #abc1d1;
+
   width: 100%;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.05);
   position: fixed;
   bottom: 0;
+  padding-bottom: 5px;
+  justify-content: space-around;
+  align-items: center;
 
   *:focus {
     outline: none;
@@ -38,7 +39,7 @@ const InputBox = styled.form`
 `;
 const Input = styled.input`
   height: 50px;
-  width: 90%;
+  width: 60%;
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 20px;
 `;
