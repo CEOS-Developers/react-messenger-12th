@@ -9,6 +9,7 @@ const ChattingScreen = ({ match }) => {
   const { userIndex } = match.params;
 
   let MSGLIST = friendList[userIndex].messageList;
+  const FRIENDLIST = friendList;
   const [inputText, setInputText] = useState("");
   const [messageList, setMessageList] = useState(MSGLIST);
   const [user, setUser] = useState(true);
@@ -48,11 +49,11 @@ const ChattingScreen = ({ match }) => {
       {/* <Header user={user} onClick={() => setUser(!user)}></Header> */}
 
       <Header
-        user={user ? friendList[userIndex].name : "sangbeen"}
+        user={user ? FRIENDLIST[userIndex].name : "sangbeen"}
         onClick={() => setUser(!user)}
         imgUrl={
           user
-            ? require(`./images/${friendList[userIndex].user}.jpg`)
+            ? require(`./images/${FRIENDLIST[userIndex].user}.jpg`)
             : require(`./images/sangbeen.jpg`)
         }
       ></Header>
@@ -64,7 +65,7 @@ const ChattingScreen = ({ match }) => {
               <Img
                 src={
                   message.user
-                    ? require(`./images/${friendList[userIndex].user}.jpg`)
+                    ? require(`./images/${FRIENDLIST[userIndex].user}.jpg`)
                     : require(`./images/sangbeen.jpg`)
                 }
               />
