@@ -48,7 +48,9 @@ export default function ChattingScreen() {
 
 const Wrapper = styled.div`
   height: 100%;
+  overflow: auto;
 
   display: flex;
   flex-direction: column;
+  background-color: #abc1d1;
 `;

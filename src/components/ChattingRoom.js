@@ -22,8 +22,9 @@ export default function ChattingRoom({ userNum }) {
 }
 
 const Wrapper = styled.div`
-  height: 10%;
+  height: 60px;
   width: 100%;
+  margin-top: 10px;
   background: #ce93d8;
 
   display: flex;
