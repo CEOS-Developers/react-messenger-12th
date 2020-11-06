@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import Friend from '../components/Friend';
-import groupNameArr from '../components/arrayMessage.json';
+import groupNameArr from '../arrayMessage.json';
 import ChattingRoom from '../components/ChattingRoom';
 
 export default function FriendList() {
@@ -17,7 +17,6 @@ export default function FriendList() {
     <Wrapper>
       <SearchBar type="text" placeholder="   이름으로 검색" onChange={onChangeSearchBar} />
       <FriendBox>
-        {/* <Friend userNum={9} /> */}
         <ChattingRoom profile={myInfo.profile} 
           name={myInfo.name} preview={myInfo.chatPreview}/>
         <ListCount>그룹 10</ListCount>

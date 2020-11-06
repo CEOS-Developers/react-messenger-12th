@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import ChattingRoom from './ChattingRoom';
-import chattingRoomArr from './arrayMessage.json';
+import chattingRoomArr from '../arrayMessage.json';
 
 export default function ChattingRoomList() {
   const [searchKey, setSearchKey] = useState('');

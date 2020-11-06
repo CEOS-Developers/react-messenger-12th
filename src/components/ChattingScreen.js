@@ -5,7 +5,7 @@ import Header from './Header';
 import MessageSender from './MessageSender';
 import MessageView from './MessageView';
 
-import arrayMessage from './arrayMessage.json';
+import arrayMessage from '../arrayMessage.json';
 
 export default function ChattingScreen() {
   const [messageArr, setMessageArr] = useState(arrayMessage.arrMessage);

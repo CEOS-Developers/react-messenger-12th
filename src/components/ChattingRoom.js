@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import chattingRoomArr from './arrayMessage.json';
 
 export default function ChattingRoom({ profile, name, preview, userNum }) {
-
   return (
     <Wrapper>
       <ChatterProfile src={profile} />

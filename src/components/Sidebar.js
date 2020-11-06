@@ -2,16 +2,11 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
-export default function Sidebar({ getNewPage }) {
-//   const [getClick, setGetClick] = useState('');
-//   const getNewPage = (e) => {
-//     setGetClick('');
-//   };
-
+export default function Sidebar() {
   return (
     <Wrapper>
       <Route>
-        <LinkIcon to="/friend-list" onClick={getNewPage}>
+        <LinkIcon to="/friend-list">
           <i class="fas fa-user"></i>
         </LinkIcon>
         <LinkIcon to="/chatting-room-list">
