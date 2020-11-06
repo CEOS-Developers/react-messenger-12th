@@ -33,7 +33,7 @@ export default function Sidebar() {
 const Wrapper = styled.div`
    width: 90px;
    height: 100%;
-   background: #002171;
+   background: #333456;
 
    display: flex;
    flex-direction: column;

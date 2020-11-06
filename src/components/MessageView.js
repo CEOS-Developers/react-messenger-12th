@@ -27,10 +27,7 @@ const Wrapper = styled.ul`
   list-style: none;
   display: flex;
   flex-direction: column;
-  ${'' /* flex-grow: 1; */}
   padding: 0 0 10px 10px;
-
-  ${'' /* background-color: #abc1d1; */}
 `
 
 const MessageContainer = styled.li`
