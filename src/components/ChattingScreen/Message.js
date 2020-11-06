@@ -1,14 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const USER_T_IMG = 'https://img.techpowerup.org/200908/eun.png';
-const USER_F_IMG = 'https://img.techpowerup.org/200908/NjRiY2JjOGU5YzQz.png';
-
-export default function Message({sender, message}) {
+export default function Message({sender, senderTImg, senderFImg, message}) {
 	if(sender) {
 		return (
 			<YourMessage>
-				<SenderMessageImg src={USER_T_IMG} alt="senderImg"/>
+				<SenderMessageImg src={senderTImg} alt="senderImg"/>
 				<SenderMessageContent>{message}</SenderMessageContent>
 			</YourMessage>
 		);
@@ -16,7 +13,7 @@ export default function Message({sender, message}) {
 	else {
 		return(
 			<MyMessage>
-				<SenderMessageImg src={USER_F_IMG} alt="senderImg"/>
+				<SenderMessageImg src={senderFImg} alt="senderImg"/>
 				<SenderMessageContent>{message}</SenderMessageContent>
 			</MyMessage>
 		);
@@ -26,6 +23,7 @@ const MessageStyle = styled.div`
 	display: flex;
 	flex-direction: row;
 	align-items: center;
+	margin: 0;
 `;
 const SenderMessageImg = styled.img`
     weight: 50px;

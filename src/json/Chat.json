@@ -1,0 +1,7 @@
+{
+    "data" : [
+        { "user": true, "content": "안녕 난 빨강이야" },
+		{ "user": true, "content": "난 빨간색을 좋아해" },
+		{ "user": false, "content": "안녕 빨강아" }
+    ] 
+}

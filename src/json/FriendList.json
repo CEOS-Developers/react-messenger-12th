@@ -1,0 +1,64 @@
+{
+    "friendList" : [
+        {
+            "id": 1,
+            "name": "빨강",
+            "image": "https://raw.githubusercontent.com/yunaisme/react-messenger-12th/yunaisme/src/img/red.PNG",
+            "state": "나는야 빨강"
+        },
+        {
+            "id": 2,
+            "name": "주황",
+            "image": "https://github.com/yunaisme/react-messenger-12th/blob/yunaisme/src/img/orange.PNG?raw=true",
+            "state": "나는야 주황"
+        },
+        {
+            "id": 3,
+            "name": "노랑",
+            "image": "https://github.com/yunaisme/react-messenger-12th/blob/yunaisme/src/img/yellow.PNG?raw=true",
+            "state": "나는야 노랑"
+        },
+        {
+            "id": 4,
+            "name": "초록",
+            "image": "https://github.com/yunaisme/react-messenger-12th/blob/yunaisme/src/img/green.PNG?raw=true",
+            "state": "나는야 초록"
+        },
+        {
+            "id": 5,
+            "name": "파랑",
+            "image": "https://github.com/yunaisme/react-messenger-12th/blob/yunaisme/src/img/blue.PNG?raw=true",
+            "state": "나는야 파랑"
+        },
+        {
+            "id": 6,
+            "name": "남남",
+            "image": "https://github.com/yunaisme/react-messenger-12th/blob/yunaisme/src/img/blue.PNG?raw=true",
+            "state": "나는야 남남"
+        },
+        {
+            "id": 7,
+            "name": "보라",
+            "image": "https://github.com/yunaisme/react-messenger-12th/blob/yunaisme/src/img/purple.PNG?raw=true",
+            "state": "나는야 보라"
+        },
+        {
+            "id": 8,
+            "name": "흑흑",
+            "image": "https://github.com/yunaisme/react-messenger-12th/blob/yunaisme/src/img/black.PNG?raw=true",
+            "state": "나는야 흑흑"
+        },
+        {
+            "id": 9,
+            "name": "백백",
+            "image": "https://github.com/yunaisme/react-messenger-12th/blob/yunaisme/src/img/white.PNG?raw=true",
+            "state": "나는야 백백"
+        },
+        {
+            "id": 10,
+            "name": "회회",
+            "image": "https://github.com/yunaisme/react-messenger-12th/blob/yunaisme/src/img/grey.PNG?raw=true",
+            "state": "나는야 회회"
+        }
+    ]
+}

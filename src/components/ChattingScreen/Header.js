@@ -15,12 +15,14 @@ export default function Header({sender, senderImg, changeSender}) {
 	)
 }
 const Wrapper = styled.div`
-	position: sticky;
+	width: 100%;
+	height: 85px;
+	position: fixed;
 	top: 0;
 	display: flex;
 	flex-direction: row;
 	background-color: rgba(255,255,255,0.8);
-	box-shadow: 0 0 20px rgba(0,0,0,0.4);
+	box-shadow: 0 0 10px rgba(0,0,0,0.4);
 	color: black;
 `;
 const SenderChangeButton = styled.button`
@@ -35,11 +37,12 @@ const SenderImg = styled.img`
 	width: 70px;
 	height: 70px;
 	border-radius: 20px;
+	margin: 5px 0 0 0;
 `;
 const SenderInfo = styled.div`
 	display: flex;
 	flex-direction: column;
-	margin: 15px 0 0 10px;
+	margin: 10px 0 0 20px;
 `;
 const SenderName = styled.h2`
 	font-weight: normal;

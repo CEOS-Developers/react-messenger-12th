@@ -1,0 +1,64 @@
+{
+    "chatList" : [
+        {
+            "id": 1,
+            "name": "빨강",
+            "image": "https://raw.githubusercontent.com/yunaisme/react-messenger-12th/yunaisme/src/img/red.PNG",
+            "lastMsg": "안녕 빨강아"
+        },
+        {
+            "id": 2,
+            "name": "주황",
+            "image": "https://github.com/yunaisme/react-messenger-12th/blob/yunaisme/src/img/orange.PNG?raw=true",
+            "lastMsg": "주황입니다"
+        },
+        {
+            "id": 3,
+            "name": "노랑",
+            "image": "https://github.com/yunaisme/react-messenger-12th/blob/yunaisme/src/img/yellow.PNG?raw=true",
+            "lastMsg": "노랑입니다"
+        },
+        {
+            "id": 4,
+            "name": "초록",
+            "image": "https://github.com/yunaisme/react-messenger-12th/blob/yunaisme/src/img/green.PNG?raw=true",
+            "lastMsg": "초록입니다"
+        },
+        {
+            "id": 5,
+            "name": "파랑",
+            "image": "https://github.com/yunaisme/react-messenger-12th/blob/yunaisme/src/img/blue.PNG?raw=true",
+            "lastMsg": "파랑입니다"
+        },
+        {
+            "id": 6,
+            "name": "남남",
+            "image": "https://github.com/yunaisme/react-messenger-12th/blob/yunaisme/src/img/blue.PNG?raw=true",
+            "lastMsg": "남남입니다"
+        },
+        {
+            "id": 7,
+            "name": "보라",
+            "image": "https://github.com/yunaisme/react-messenger-12th/blob/yunaisme/src/img/purple.PNG?raw=true",
+            "lastMsg": "보라입니다"
+        },
+        {
+            "id": 8,
+            "name": "흑흑",
+            "image": "https://github.com/yunaisme/react-messenger-12th/blob/yunaisme/src/img/black.PNG?raw=true",
+            "lastMsg": "흑흑입니다"
+        },
+        {
+            "id": 9,
+            "name": "백백",
+            "image": "https://github.com/yunaisme/react-messenger-12th/blob/yunaisme/src/img/white.PNG?raw=true",
+            "lastMsg": "백백입니다"
+        },
+        {
+            "id": 10,
+            "name": "회회",
+            "image": "https://github.com/yunaisme/react-messenger-12th/blob/yunaisme/src/img/grey.PNG?raw=true",
+            "lastMsg": "회회입니다"
+        }
+    ]
+}
