@@ -23,13 +23,13 @@ const FOLLOWERSLIST = [
     },
     {
       img: 'https://t1.daumcdn.net/cfile/tistory/99E736335A13EDDE04',
-      id: 'abcda',
+      id: 'sdfsdo',
       name: '유유유',
     },
     {
       img:
         'https://i.pinimg.com/originals/ed/d8/75/edd875f1fd33a8e6cf46c30b7bebc517.jpg',
-      id: 'abcddf',
+      id: 'dddsff',
       name: '빈빈빈',
     },
   ];
@@ -59,13 +59,30 @@ export default function FollowersTab({}) {
     );
   }, [search, followersList]);
 
+
+  const handleDelete =(id) =>{
+    console.log("id",id);
+    setFilteredFollowers(
+      followersList.filter((followers) => {
+        return (followers.id!== id);
+      }))
+
+    //const toBeDeleted=FOLLOWERSLIST.indexOf(0);
+    FOLLOWERSLIST.map((k,v)=>{
+      if(k.id===id){
+        FOLLOWERSLIST.splice(v,1);
+      }
+    })
+      
+    }
+
   return (
     <Wrapper>
       <SearchBox
         type='text'
         placeholder='search'
         onChange={handleChange}
-        size='80'
+        size='50'
       ></SearchBox>
       <Profile>
         {filteredFollowers.map((info, index) => {
@@ -76,7 +93,7 @@ export default function FollowersTab({}) {
                 <FollowersID>{info.id}</FollowersID>
                 <Name>{info.name}</Name>
               </ProfileInfo>
-              <RemoveButton>Remove</RemoveButton>
+              <RemoveButton onClick={()=>handleDelete(info.id)}>Remove</RemoveButton>
             </ProfileCard>
           );
         })}
@@ -130,6 +147,7 @@ const SearchBox = styled.input`
   margin-top: 10px;
   margin-right: 15px;
   margin-left: 15px;
+  font-size:20px;
 `;
 
 const FollowersID = styled.ul`

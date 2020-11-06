@@ -18,7 +18,7 @@ const FOLLOWERSLIST = [
   
     {
       img: 'https://t1.daumcdn.net/cfile/tistory/99E736335A13EDDE04',
-      id: 'abcda',
+      id: 'sdfsdo',
       name: '유유유',
     },
 
@@ -49,24 +49,54 @@ export default function FollowingsTab({}) {
     );
   }, [search, followersList]);
 
+  
+
+  const handleDelete =(id) =>{
+    console.log("id",id);
+    setFilteredFollowers(
+      followersList.filter((followers) => {
+        return (followers.id!== id);
+      }))
+
+    //const toBeDeleted=FOLLOWERSLIST.indexOf(0);
+    FOLLOWERSLIST.map((k,v)=>{
+      if(k.id===id){
+        FOLLOWERSLIST.splice(v,1);
+      }
+    })
+      
+    }
+
+  
+
+ //remove 할 때 USEFFECT 쓰면 안되는 이유? ??
+/*
+  useEffect(() => {
+      FOLLOWERSLIST.splice(deletes,1)
+    );
+  }, [deletes, followersList]);
+  */
+
+
+
   return (
     <Wrapper>
       <SearchBox
         type='text'
         placeholder='search'
         onChange={handleChange}
-        size='60'
+        size='50'
       ></SearchBox>
       <Profile>
         {filteredFollowers.map((info, index) => {
           return (
-            <ProfileCard>
+            <ProfileCard key={index} >
               <ProfileImage src={info.img} width='70' height='70' />
               <ProfileInfo>
                 <FollowersID>{info.id}</FollowersID>
                 <Name>{info.name}</Name>
               </ProfileInfo>
-              <RemoveButton>Remove</RemoveButton>
+              <RemoveButton onClick={()=>handleDelete(info.id)}>Remove</RemoveButton>
             </ProfileCard>
           );
         })}
@@ -120,6 +150,7 @@ const SearchBox = styled.input`
   margin-top: 10px;
   margin-right: 15px;
   margin-left: 15px;
+  font-size:20px;
 `;
 
 const FollowersID = styled.ul`
