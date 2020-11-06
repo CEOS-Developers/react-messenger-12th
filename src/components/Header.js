@@ -17,11 +17,13 @@ export default function Header({ changeUser, user, imgURL }) {
 const Wrapper = styled.div`
 position: fixed;
 width: 100%;
+
 `
 const ProfileCard = styled.div`
-  background-color: white;
+  background-color: #f5f5f5;
   color: black;
   display: flex;
+  border-bottom:1px solid black;
 `;
 const ProfileInfo = styled.div`
   flex-direction: column;

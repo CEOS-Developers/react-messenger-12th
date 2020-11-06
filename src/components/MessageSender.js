@@ -13,6 +13,7 @@ export default function MessageSender({
         <Input
           type="text"
           name="content"
+          placeholder="      Message..."
           value={newMessage.content}
           onChange={changeInputChat}
         ></Input>
@@ -33,7 +34,6 @@ const Form = styled.form`
   padding: 10px;
   align-content: stretch;
   background-color: white;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
   background: white;
 `;
 

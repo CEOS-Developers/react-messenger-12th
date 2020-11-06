@@ -34,12 +34,17 @@ export default function UserSettingScreen({}) {
   }, [search, settingList]);
   return (
     <Wrapper>
+      <Header>
+       <BackButton>
+          <StyledLink to='/'>main</StyledLink>
+        </BackButton>
       <SearchBox
         type='text'
-        placeholder='search'
+        placeholder='  search'
         onChange={handleChange}
-        size='50'
+        size='40'
       ></SearchBox>
+      </Header>
 
       {filteredSettings.map((info, index) => {
         return (
@@ -106,4 +111,24 @@ const SearchBox = styled.input`
   margin-right: 15px;
   margin-left: 15px;
   font-size:20px;
+`;
+
+const BackButton = styled.button`
+  flex-grow: 0.5;
+  margin: 10px 0px 0px 20px;
+  
+  
+`;
+
+const Header = styled.header`
+  display:flex;
+
+`;
+
+const StyledLink = styled(Link)`
+    text-decoration: none;
+
+    &:focus, &:hover, &:visited, &:link, &:active {
+        text-decoration: none;
+    }
 `;
