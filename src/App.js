@@ -25,4 +25,8 @@ const Wrapper = styled.div`
   & * {
     font-family: sans-serif;
   }
+  a {
+    color: black;
+    text-decoration: none;
+  }
 `;

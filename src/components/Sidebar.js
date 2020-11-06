@@ -7,12 +7,12 @@ export default function Sidebar() {
   return (
     <Wrapper>
       <Link to="/friends">
-        <FaUserAlt size="30" />
+        <FaUserAlt color="black" size="30" />
       </Link>
       <Link to="/chat">
-        <BsFillChatFill style={{ paddingTop: "50px" }} size="30" />
+        <BsFillChatFill color="black" style={{ paddingTop: "50px" }} size="30" />
       </Link>
-      <BsThreeDots style={{ paddingTop: "50px" }} size="30" />
+      <BsThreeDots color="black" style={{ paddingTop: "50px" }} size="30" />
     </Wrapper>
   );
 }

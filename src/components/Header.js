@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { images } from "./images/image";
 
 export default function Header({ user, onClick, imgUrl }) {
   //change parent's user state using props
@@ -10,9 +9,6 @@ export default function Header({ user, onClick, imgUrl }) {
 
   return (
     <Profile onClick={handleClick}>
-      {/* if user value is false */}
-      {/* I hate this code!!!!!! I want simpler code... */}
-
       <Img src={imgUrl} />
       <div>
         <h2 style={{ marginBottom: "0" }}> {user} </h2>

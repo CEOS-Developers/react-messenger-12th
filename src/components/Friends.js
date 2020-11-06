@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { withRouter } from "react-router-dom";
-import { FriendContainer, FriendRow, Img } from "./styles/elements";
+import {
+  FriendContainer,
+  FriendRow,
+  Img,
+  Input,
+  InputBox,
+} from "./styles/elements";
 
 const Friends = () => {
   const FRIENDLIST = [
@@ -22,13 +28,40 @@ const Friends = () => {
     },
   ];
 
+  let filteredFriendList = [];
+
+  const [inputText, setInputText] = useState("");
+  const [newFriendList, setNewFriendList] = useState(FRIENDLIST);
+
+  const handleInput = (event) => {
+    event.preventDefault();
+    setInputText(event.target.value);
+  };
+
+  filteredFriendList = newFriendList.filter((friend) =>
+    friend.name.includes(inputText)
+  );
+  //왜 useEffect를 안 써도 되는걸까..
+  //왜 filteredFriendList를 state로 만들어주지 않아도 되는걸까...
   return (
     <div>
       <h2>친구</h2>
       <InputBox>
-        <Input placeholder="친구 검색" />
+        <Input
+          placeholder="친구 검색"
+          value={inputText}
+          onChange={handleInput}
+        />
       </InputBox>
-      {FRIENDLIST.map((friend, index) => {
+      <FriendRow border>
+        <Img src={require("./images/sangbeen.jpg")} />
+        <FriendContainer>
+          <div>상빈</div>
+          <StatusMessage>안녕!!!</StatusMessage>
+        </FriendContainer>
+      </FriendRow>
+
+      {filteredFriendList.map((friend, index) => {
         return (
           <FriendRow key={index} sending={!friend.user}>
             <Img src={require(`./images/${friend.user}.jpg`)} />
@@ -42,14 +75,6 @@ const Friends = () => {
     </div>
   );
 };
-
-const InputBox = styled.form``;
-const Input = styled.input`
-  height: 50px;
-  width: 90%;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 20px;
-`;
 
 const StatusMessage = styled.div`
   font-size: 5px;
