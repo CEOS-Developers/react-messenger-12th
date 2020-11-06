@@ -1,21 +1,20 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import ChattingRoom from './ChattingRoom';
 
-export default function ChattingRoomList() {
-  const [searchKey, setSearchKey] = useState('');
-  const nameArr = [
-    '고은',
-    '문상빈',
-    '문상진',
-    '유빈',
-    '이재용',
-    '정쿨',
-    '지노',
-    '황유나',
-    '유현우',
-    '장창훈',
-  ];
+export default function FriendList() {
+    const [searchKey, setSearchKey] = useState('');
+    const nameArr = [
+      '고은',
+      '문상빈',
+      '문상진',
+      '유빈',
+      '이재용',
+      '정쿨',
+      '지노',
+      '황유나',
+      '유현우',
+      '장창훈',
+    ];
 
   const onChangeSearchBar = (e) => {
     setSearchKey(e.target.value);
@@ -23,14 +22,14 @@ export default function ChattingRoomList() {
 
   return (
     <Wrapper>
-      <SearchBar type="text" placeholder="대화방, 메시지 검색" onChange={onChangeSearchBar} />
-      <ChattingRoomBox>
+      <SearchBar type="text" placeholder="이름으로 검색" onChange={onChangeSearchBar} />
+      <FriendBox>
         {nameArr.map((name, index) => {
           if (name.indexOf(searchKey) > -1) {
             return <ChattingRoom userNum={index} />;
           } else return null;
         })}
-      </ChattingRoomBox>
+      </FriendBox>
     </Wrapper>
   );
 }
@@ -53,6 +52,6 @@ const SearchBar = styled.input`
   background: #eeeeee;
 `;
 
-const ChattingRoomBox = styled.div`
+const FriendBox = styled.div`
   overflow: auto;
 `;

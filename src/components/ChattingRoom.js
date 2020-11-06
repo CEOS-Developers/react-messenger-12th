@@ -25,7 +25,7 @@ const Wrapper = styled.div`
   height: 60px;
   width: 100%;
   margin-top: 10px;
-  background: #ce93d8;
+  background: #fafafa;
 
   display: flex;
 `;
@@ -42,6 +42,13 @@ const ChattingInfo = styled.div`
   flex-direction: column;
 `;
 
-const ChatterName = styled.div``;
+const ChatterName = styled.div`
+  margin-top: 10px;
+  font-size: 13px;
+  text-decoration: none;
+`;
 
-const ChattingPreview = styled.div``;
+const ChattingPreview = styled.div`
+  font-size: 11px;
+  text-decoration: none;
+`;

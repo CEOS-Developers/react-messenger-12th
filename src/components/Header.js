@@ -18,7 +18,7 @@ export default function Header({ togglePersonSendingMsg, personSendingMsg }) {
 }
 
 const Wrapper = styled.div`
-  height: 40px;
+  height: 70px;
   ${'' /* width: 21.85%; */}
   padding: 5px 20px;
 
