@@ -2,12 +2,13 @@ import React from "react";
 import { FaUserAlt } from "react-icons/fa";
 import { BsFillChatFill, BsThreeDots } from "react-icons/bs";
 import styled from "styled-components";
-import { withRouter, Link, Route } from "react-router-dom";
-import ChattingScreen from "./ChattingScreen";
+import { Link } from "react-router-dom";
 export default function Sidebar() {
   return (
     <Wrapper>
-      <FaUserAlt size="30" />
+      <Link to="/friends">
+        <FaUserAlt size="30" />
+      </Link>
       <Link to="/chat">
         <BsFillChatFill style={{ paddingTop: "50px" }} size="30" />
       </Link>
@@ -17,12 +18,6 @@ export default function Sidebar() {
 }
 
 const Wrapper = styled.div`
-  /* display: flex;
-  flex-direction: column;
-  justify-content: space-evenly; */
-  /* left: 25%;
-  position: absolute; */
-
   display: flex;
   flex-direction: column;
   height: 100%;

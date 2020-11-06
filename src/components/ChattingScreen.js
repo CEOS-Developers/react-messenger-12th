@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { images } from "./images/image";
 import MessageSender from "./MessageSender";
 import { withRouter } from "react-router-dom";
+import Header from "./Header";
 const ChattingScreen = () => {
   const MSGLIST = [
     { user: true, content: "안녕하세요 12기 프론트엔드 개발자분들" },
@@ -53,11 +54,11 @@ const ChattingScreen = () => {
       {/* child component updates state in parent component   */}
       {/* <Header user={user} onClick={() => setUser(!user)}></Header> */}
 
-      {/* <Header
+      <Header
         user={user ? "고은" : "정쿨"}
         onClick={() => setUser(!user)}
         imgUrl={user ? images.EUNKO : images.COOL}
-      ></Header> */}
+      ></Header>
       <Chat>
         {/* give <li> structure to each message */}
         {messageList.map((message, index) => {

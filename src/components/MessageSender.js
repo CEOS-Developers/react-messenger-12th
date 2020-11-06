@@ -24,7 +24,6 @@ const InputBox = styled.form`
   padding-bottom: 5px;
   justify-content: space-around;
   align-items: center;
-  //background-color: rgba(0, 0, 0, 0.05);
 
   *:focus {
     outline: none;

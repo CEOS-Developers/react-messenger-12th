@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Sidebar from "./components/Sidebar";
 import ChattingScreen from "./components/ChattingScreen";
+import Friends from "./components/Friends";
 import { BrowserRouter, Route } from "react-router-dom";
 
 export default function App() {
@@ -10,6 +11,7 @@ export default function App() {
       <Sidebar />
       <Wrapper>
         <Route path="/chat" exact={true} component={ChattingScreen} />
+        <Route path="/friends" exact={true} component={Friends} />
       </Wrapper>
     </BrowserRouter>
   );
