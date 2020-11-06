@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Sidebar from "./components/Sidebar";
 import ChattingScreen from "./components/ChattingScreen";
 import Friends from "./components/Friends";
+import Chat from "./components/Chat";
 import { BrowserRouter, Route } from "react-router-dom";
 
 export default function App() {
@@ -10,8 +11,9 @@ export default function App() {
     <BrowserRouter>
       <Sidebar />
       <Wrapper>
-        <Route path="/chat" exact={true} component={ChattingScreen} />
+        <Route path="/chat" exact={true} component={Chat} />
         <Route path="/friends" exact={true} component={Friends} />
+        <Route path="/chatting" exact={true} component={ChattingScreen} />
       </Wrapper>
     </BrowserRouter>
   );
