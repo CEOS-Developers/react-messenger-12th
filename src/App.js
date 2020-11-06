@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import ChattingScreen from './components/ChattingScreen';
 // import Sidebar from './components/Sidebar'
 import ChattingRoomList from './components/ChattingRoomList';
+import FriendList from './routes/FriendList';
+import StartingPage from './components/StartingPage';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 export default function App() {
@@ -12,7 +14,7 @@ export default function App() {
       {/* <AppScreen> */}
       <Router>
         <Sidebar>
-          <LinkIcon to="/chatting-room-list">
+          <LinkIcon to="/friend-list">
             <i class="fas fa-user"></i>
           </LinkIcon>
           <LinkIcon to="/chatting-room-list">
@@ -37,6 +39,7 @@ export default function App() {
           <AppController />
           <Switch>
             {/* <MainScreen> */}
+            <Route path="/friend-list" component={FriendList} />
             <Route path="/chatting-room-list" component={ChattingRoomList} />
             <Route path="/chatting-screen" component={ChattingRoomList} />
             <Route exact path="/" component={ChattingRoomList} />
@@ -45,8 +48,10 @@ export default function App() {
         </ChattingRoomListContainer>
         <ChattingScreenContainer>
           <Switch>
-            <Route path="/chatting-screen" component={ChattingScreen} />
+            <Route path="/friend-list" component={ChattingScreen} />
             <Route path="/chatting-room-list" component={ChattingScreen} />
+            <Route path="/chatting-screen" component={ChattingScreen} />
+            <Route exact path="/" component={StartingPage} />
           </Switch>
         </ChattingScreenContainer>
       </Router>

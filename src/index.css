@@ -117,3 +117,7 @@ i {
 .far.fa-volume-down {
     font-size: 23px;
 }
+
+input::placeholder {
+    color:#a4a4a4;
+}
