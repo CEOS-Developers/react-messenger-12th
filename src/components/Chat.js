@@ -8,30 +8,15 @@ import {
   Input,
   InputBox,
 } from "./styles/elements";
-import { Link } from "react-router-dom";
+import { Link, Route } from "react-router-dom";
+import { friendList } from "./data";
+import ChattingScreen from "./ChattingScreen";
 function Chat() {
-  const FRIENDLIST = [
-    {
-      user: "vanellope",
-      name: "바넬로피",
-      content: "안녕 난 바넬로피야!",
-    },
-    {
-      user: "miso",
-      name: "미소",
-      content: "오늘 학식 뭐야",
-    },
-    {
-      user: "jian",
-      name: "지안",
-      content: "아니 언제오는거야 대체",
-    },
-  ];
-
+  let path;
   let filteredChatList = [];
 
   const [inputText, setInputText] = useState("");
-  const [newChatList, setNewChatList] = useState(FRIENDLIST);
+  const [newChatList, setNewChatList] = useState(friendList);
 
   const handleInput = (event) => {
     event.preventDefault();
@@ -53,11 +38,12 @@ function Chat() {
         />
       </InputBox>
       {filteredChatList.map((friend, index) => {
+        path = `/chatting/${index}`;
         return (
           <FriendRow key={index} sending={!friend.user}>
             <Img src={require(`./images/${friend.user}.jpg`)} />
             <FriendContainer>
-              <Link to="/chatting">
+              <Link to={path}>
                 <div>{friend.name}</div>
                 <MessagePreview>{friend.content}</MessagePreview>
               </Link>
@@ -65,6 +51,8 @@ function Chat() {
           </FriendRow>
         );
       })}
+
+      <Route path="/chatting/:userIndex" component={ChattingScreen} />
     </Wrapper>
   );
 }

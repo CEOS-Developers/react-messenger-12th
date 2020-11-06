@@ -11,9 +11,9 @@ export default function App() {
     <BrowserRouter>
       <Sidebar />
       <Wrapper>
-        <Route path="/chat" exact={true} component={Chat} />
+        <Route path="/chat/" exact={true} component={Chat} />
         <Route path="/friends" exact={true} component={Friends} />
-        <Route path="/chatting" exact={true} component={ChattingScreen} />
+        <Route path="/chatting/:userIndex" component={ChattingScreen} />
       </Wrapper>
     </BrowserRouter>
   );

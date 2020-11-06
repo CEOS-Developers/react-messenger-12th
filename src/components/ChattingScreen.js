@@ -1,21 +1,14 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { images } from "./images/image";
 import MessageSender from "./MessageSender";
 import { withRouter } from "react-router-dom";
 import Header from "./Header";
-const ChattingScreen = () => {
-  const MSGLIST = [
-    { user: true, content: "안녕하세요 12기 프론트엔드 개발자분들" },
-    { user: true, content: "저희의 대화를 마음껏 조작해보세요 💌" },
-    { user: true, content: "상단에 프로필을 눌러서 발신자 변경하면 됩니당~" },
-    { user: false, content: "안녕 은아" },
-    { user: false, content: "뭐해 ?" },
-    { user: true, content: "시원아 넌 최고의 팀장이야" },
-    { user: false, content: "나도 아니까  " },
-    { user: false, content: "그만 말해줘도 돼" },
-    { user: true, content: "ㅠㅠ" },
-  ];
+import { friendList } from "./data";
+const ChattingScreen = ({ match }) => {
+  //get user information using URL parameter
+  const { userIndex } = match.params;
+
+  let MSGLIST = friendList[userIndex].messageList;
   const [inputText, setInputText] = useState("");
   const [messageList, setMessageList] = useState(MSGLIST);
   const [user, setUser] = useState(true);
@@ -55,16 +48,26 @@ const ChattingScreen = () => {
       {/* <Header user={user} onClick={() => setUser(!user)}></Header> */}
 
       <Header
-        user={user ? "고은" : "정쿨"}
+        user={user ? friendList[userIndex].name : "sangbeen"}
         onClick={() => setUser(!user)}
-        imgUrl={user ? images.EUNKO : images.COOL}
+        imgUrl={
+          user
+            ? require(`./images/${friendList[userIndex].user}.jpg`)
+            : require(`./images/sangbeen.jpg`)
+        }
       ></Header>
       <Chat>
         {/* give <li> structure to each message */}
         {messageList.map((message, index) => {
           return (
             <MessageRow key={index} sending={!message.user}>
-              <Img src={message.user ? images.EUNKO : images.COOL} />
+              <Img
+                src={
+                  message.user
+                    ? require(`./images/${friendList[userIndex].user}.jpg`)
+                    : require(`./images/sangbeen.jpg`)
+                }
+              />
               <Message>{message.content}</Message>
             </MessageRow>
           );
@@ -89,9 +92,7 @@ const Empty = styled.div`
 `;
 
 const Chat = styled.div`
-  /* background-color: #abc1d1; */
   padding-top: 120px;
-  /* padding-bottom: 200px; */
 `;
 
 const MessageRow = styled.li`

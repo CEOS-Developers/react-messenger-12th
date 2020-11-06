@@ -8,30 +8,12 @@ import {
   Input,
   InputBox,
 } from "./styles/elements";
-
+import { friendList } from "./data";
 const Friends = () => {
-  const FRIENDLIST = [
-    {
-      user: "vanellope",
-      name: "바넬로피",
-      content: "안녕 난 바넬로피야!",
-    },
-    {
-      user: "miso",
-      name: "미소",
-      content: "오늘 학식 뭐야",
-    },
-    {
-      user: "jian",
-      name: "지안",
-      content: "아니 언제오는거야 대체",
-    },
-  ];
-
   let filteredFriendList = [];
 
   const [inputText, setInputText] = useState("");
-  const [newFriendList, setNewFriendList] = useState(FRIENDLIST);
+  const [newFriendList, setNewFriendList] = useState(friendList);
 
   const handleInput = (event) => {
     event.preventDefault();
@@ -44,7 +26,7 @@ const Friends = () => {
   //왜 useEffect를 안 써도 되는걸까..
   //왜 filteredFriendList를 state로 만들어주지 않아도 되는걸까...
   return (
-    <div>
+    <Wrapper>
       <h2>친구</h2>
       <InputBox>
         <Input
@@ -72,9 +54,13 @@ const Friends = () => {
           </FriendRow>
         );
       })}
-    </div>
+    </Wrapper>
   );
 };
+
+const Wrapper = styled.div`
+  margin-left: 10px;
+`;
 
 const StatusMessage = styled.div`
   font-size: 5px;
