@@ -1,29 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 import ChattingScreen from './components/ChattingScreen';
-// import Sidebar from './components/Sidebar'
+import Sidebar from './components/Sidebar'
 import ChattingRoomList from './components/ChattingRoomList';
 import FriendList from './routes/FriendList';
 import StartingPage from './components/StartingPage';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 export default function App() {
+  const [getLink, setGetLink] = useState('');
+  const getNewPage = (e) => {
+    setGetLink('');
+  };
+
   return (
     <Container>
       {/* <AppScreen> */}
       <Router>
-        <Sidebar>
-          <LinkIcon to="/friend-list">
+        <Sidebar {... { getNewPage }}>
+          {/* <LinkIcon to="/friend-list">
             <i class="fas fa-user"></i>
           </LinkIcon>
           <LinkIcon to="/chatting-room-list">
             <i class="fas fa-comment-dots"></i>
           </LinkIcon>
-          <LinkIcon to="/chatting-room-list">
+          <LinkIcon to="/friend-list">
             <i class="fas fa-user-plus"></i>
           </LinkIcon>
-          <LinkIcon to="/chatting-room-list">
+          <LinkIcon to="/friend-list">
             <i class="fad fa-clock"></i>
           </LinkIcon>
           <ServeIcon className="serve-icon">
@@ -32,25 +37,25 @@ export default function App() {
             <i class="far fa-bookmark"></i>
             <i class="far fa-volume-down"></i>
             <i class="fas fa-ellipsis-h"></i>
-          </ServeIcon>
+          </ServeIcon> */}
         </Sidebar>
 
         <ChattingRoomListContainer>
           <AppController />
           <Switch>
-            {/* <MainScreen> */}
             <Route path="/friend-list" component={FriendList} />
             <Route path="/chatting-room-list" component={ChattingRoomList} />
             <Route path="/chatting-screen" component={ChattingRoomList} />
+            <Route path="/friend-list/chatting-screen" component={FriendList} />
             <Route exact path="/" component={ChattingRoomList} />
-            {/* </MainScreen> */}
           </Switch>
         </ChattingRoomListContainer>
         <ChattingScreenContainer>
           <Switch>
-            <Route path="/friend-list" component={ChattingScreen} />
-            <Route path="/chatting-room-list" component={ChattingScreen} />
+            <Route exact path="/friend-list" component={StartingPage} />
+            <Route path="/chatting-room-list" component={StartingPage} />
             <Route path="/chatting-screen" component={ChattingScreen} />
+            <Route path="/friend-list/chatting-screen" component={ChattingScreen} />
             <Route exact path="/" component={StartingPage} />
           </Switch>
         </ChattingScreenContainer>
@@ -79,16 +84,16 @@ const AppScreen = styled.div`
   display: flex;
 `;
 
-const Sidebar = styled.div`
-  ${'' /* width: 7%; */}
-  width: 90px;
-  height: 100%;
-  background: #002171;
+// const Sidebar = styled.div`
+//   ${'' /* width: 7%; */}
+//   width: 90px;
+//   height: 100%;
+//   background: #002171;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+// `;
 
 const ServeIcon = styled.div`
   ${'' /* height: 30%; */}

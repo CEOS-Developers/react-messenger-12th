@@ -14,7 +14,7 @@ export default function ChattingRoom({ userNum }) {
     return (
       <Wrapper>
         <ChatterProfile src={groupProfileArr[userNum]} />
-        <ChattingLink to="/">
+        <ChattingLink to="/friend-list/chatting-screen">
             <ChatterName>{groupNameArr[userNum]}</ChatterName>
         </ChattingLink>
       </Wrapper>

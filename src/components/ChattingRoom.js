@@ -4,11 +4,6 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import chattingRoomArr from './arrayMessage.json';
 
 export default function ChattingRoom({ profile, name, preview, userNum }) {
-  const eunProfile = 'https://img.techpowerup.org/200908/eun.png';
-  const nameArr = ['고은', '문상빈', '문상진', '유빈', '이재용',
-   '정쿨', '지노', '황유나', '유현우', '장창훈'];
-  const chattingPreviewArr = ['안녕하세요'];
-  const chatPreviewArr = chattingRoomArr.chatPreviewArr;
 
   return (
     <Wrapper>

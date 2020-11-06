@@ -1,53 +1,58 @@
-import React from 'react'
-import styled from 'styled-components'
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-} from "react-router-dom";
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
-export default function Sidebar() {
+export default function Sidebar({ getNewPage }) {
+//   const [getClick, setGetClick] = useState('');
+//   const getNewPage = (e) => {
+//     setGetClick('');
+//   };
 
-    return (
-        <Wrapper>
-            <Router>
-                <Link to="/chatting-screen"><i class="fas fa-user"></i></Link>
-                <i class="fas fa-user"></i>
-                <i class="fas fa-comment-dots"></i>
-                <i class="fas fa-user-plus"></i>
-                <i class="fad fa-clock"></i>
-
-                <ServeIcon>
-                    <i class="far fa-video-plus"></i>
-                    <i class="far fa-square"></i>
-                    <i class="far fa-bookmark"></i>
-                    <i class="far fa-volume-down"></i>
-                    <i class="fas fa-ellipsis-h"></i>
-                </ServeIcon>
-            </Router>
-        </Wrapper>
-    )
+  return (
+    <Wrapper>
+      <Route>
+        <LinkIcon to="/friend-list" onClick={getNewPage}>
+          <i class="fas fa-user"></i>
+        </LinkIcon>
+        <LinkIcon to="/chatting-room-list">
+          <i class="fas fa-comment-dots"></i>
+        </LinkIcon>
+        <LinkIcon to="/friend-list">
+          <i class="fas fa-user-plus"></i>
+        </LinkIcon>
+        <LinkIcon to="/friend-list">
+          <i class="fad fa-clock"></i>
+        </LinkIcon>
+        <ServeIcon className="serve-icon">
+          <i class="far fa-video-plus"></i>
+          <i class="far fa-square"></i>
+          <i class="far fa-bookmark"></i>
+          <i class="far fa-volume-down"></i>
+          <i class="fas fa-ellipsis-h"></i>
+        </ServeIcon>
+      </Route>
+    </Wrapper>
+  );
 }
 
 const Wrapper = styled.div`
-    width: 20%;
-    height: 100%;
-    background: #31326f;
-    
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-`
+   width: 90px;
+   height: 100%;
+   background: #002171;
+
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+`;
 
 const ServeIcon = styled.div`
-    height: 30vh;
-    margin-top: 30vh;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+`;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    ${'' /* align-self: flex-start; */}
-    ${'' /* align-content: space-around; */}
-`
+const LinkIcon = styled(Link)`
+  margin: 35px 0 0 0;
+`;

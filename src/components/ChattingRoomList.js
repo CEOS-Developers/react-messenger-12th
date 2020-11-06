@@ -5,18 +5,6 @@ import chattingRoomArr from './arrayMessage.json';
 
 export default function ChattingRoomList() {
   const [searchKey, setSearchKey] = useState('');
-//   const nameArr = [
-//     '고은',
-//     '문상빈',
-//     '문상진',
-//     '유빈',
-//     '이재용',
-//     '정쿨',
-//     '지노',
-//     '황유나',
-//     '유현우',
-//     '장창훈',
-//   ];
   let profileArr = [];
   let nameArr = [];
   let previewArr = [];
@@ -26,8 +14,6 @@ export default function ChattingRoomList() {
     nameArr.push(chattingRoomArr.chatPreviewArr[key].name);
     previewArr.push(chattingRoomArr.chatPreviewArr[key].chattingPreview);
   }
-  const nameArrTest = chattingRoomArr.chatPreviewArr["name"];
-  console.log('name : ', nameArr);
 
   const onChangeSearchBar = (e) => {
     setSearchKey(e.target.value);
