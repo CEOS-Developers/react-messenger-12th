@@ -36,7 +36,7 @@ export default function UserSettingScreen({}) {
     <Wrapper>
       <Header>
        <BackButton>
-          <StyledLink to='/'>main</StyledLink>
+          <StyledLink exact to='/'>main</StyledLink>
         </BackButton>
       <SearchBox
         type='text'

@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import messageData from '../chats/messageData.json';
 import {ListUl} from '@styled-icons/boxicons-regular/ListUl';
 import {PencilSquare}from '@styled-icons/bootstrap/PencilSquare';
+import {Home} from '@styled-icons/boxicons-regular/Home';
 //JSON이용하는 법 생각해보기 
 //const messagedata=messageData[chatPartner].chat;
 //const chatArr=messagedata.siwon.chat[0];
@@ -68,7 +69,9 @@ const DMListScreen = () => {
     <Wrapper>
       <Headers>
         <BackButton>
-          <StyledLink to='/'>main</StyledLink>
+          <StyledLink to='/'>
+            <Home size="20"/>
+          </StyledLink>
         </BackButton>
         <UserID>realsemprelibera</UserID>
         <ListUl size="40"/>
