@@ -1,12 +1,11 @@
-import React from "react";
-import styled from "styled-components";
-
-import ChattingScreen from "./components/ChattingScreen";
+import React from 'react';
+import styled from 'styled-components';
+import MainPage from './components/MainPage';
 
 export default function App() {
   return (
     <Wrapper>
-      <ChattingScreen></ChattingScreen>
+      <MainPage />
     </Wrapper>
   );
 }

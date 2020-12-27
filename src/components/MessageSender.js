@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 export default function MessageSender({
   changeInputMessage,
@@ -15,7 +15,7 @@ export default function MessageSender({
         onChange={changeInputMessage}
         value={newMessage.content}
         onKeyPress={(e) => {
-          if (e.key === "Enter") {
+          if (e.key === 'Enter') {
             addMessage(e);
           }
         }}
@@ -31,7 +31,7 @@ const Wrapper = styled.div`
   align-items: center;
   position: fixed;
   bottom: 0px;
-  width: 100%;
+  width: 80%;
 `;
 const Input = styled.input`
   border-radius: 25px;
